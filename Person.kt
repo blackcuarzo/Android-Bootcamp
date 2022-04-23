@@ -1,6 +1,4 @@
-class Person (val _firstName:String, val _lastName:String) {
-    val firstName = _firstName
-    val lastName = _lastName
+class Person (val firstName:String = "Peter", val lastName:String = "Parker") { //Here the class is constructed with default values
     fun sayHello(){
         println("Hello $firstName $lastName")
     }
