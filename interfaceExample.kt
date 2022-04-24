@@ -1,9 +1,9 @@
 interface PersonInfoProvider{
-    fun printInfo(person:Person) // This creates an error
+    fun printInfo(person:Person){} // This solves the error
 }
 
 class BasicInfoProvider: PersonInfoProvider{
-    //The error is because there is no implementation of the printInfo method
+    //Now there is an implementation of the printInfo method, even if those are empty brackets. That is called "a default implementation" provided by the interface itself.
 }
 
 fun main(){
