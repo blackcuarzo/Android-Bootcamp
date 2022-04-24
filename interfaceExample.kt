@@ -1,11 +1,15 @@
 interface PersonInfoProvider{
-    fun printInfo(person:Person){} // This solves the error
+    fun printInfo(person:Person){
+        println("printInfo default implementation inside the interface")
+        person.printInfo()
+    }
 }
 
 class BasicInfoProvider: PersonInfoProvider{
-    //Now there is an implementation of the printInfo method, even if those are empty brackets. That is called "a default implementation" provided by the interface itself.
+
 }
 
 fun main(){
     val provider = BasicInfoProvider()
+    provider.printInfo(Person())
 }
