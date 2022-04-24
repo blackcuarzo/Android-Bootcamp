@@ -1,9 +1,11 @@
 interface PersonInfoProvider{
-    fun printInfo(person:Person)
+    fun printInfo(person:Person) // This creates an error
 }
 
-abstract class BasicInfoProvider: PersonInfoProvider
+class BasicInfoProvider: PersonInfoProvider{
+    //The error is because there is no implementation of the printInfo method
+}
 
-fun main{
-    val provider = BasicInfoProvider() // Error, you cannot instantiate an abstract class
+fun main(){
+    val provider = BasicInfoProvider()
 }
