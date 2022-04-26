@@ -8,14 +8,17 @@ interface IFacturador{
 interface ICliente{
     fun addName(nombre:String)
     fun addAddress(direccion:String)
+    fun getName(): String
+    fun getAddress(): String
 }
 
 interface IImpresora{
-    fun imprimirRecibo(cliente: Cliente,cuadroFactura:CuadroFactura,descuento:Double){}
+    fun imprimirRecibo(cliente: ICliente,cuadroFactura:ICuadroFactura,descuento:Double){}
 }
 
 interface ICuadroFactura{
     fun addLine(item:String,cantidad:Int,precio:String)
+    fun getEntradas():HashMap<String,Pair<Int,Double>>
 }
 
 class Facturador():IFacturador {
