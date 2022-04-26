@@ -1,36 +1,50 @@
-class Factura() {
-    var descuento:Double = 0.0
-    var lineasRecibo = HashMap<String,Pair<Int,Double>>()
-    var nombre = ""
-    var direccion = ""
-    fun imprimirRecibo(){
-        println("${nombre} \n${direccion}\n")
-        System.out.printf("%-15s%-10s%-10s%-10s%n","Articulo","Cantidad","Precio","Total")
-        System.out.printf("%-15s%-10s%-10s%-10s%n","--------","--------","--------","--------")
-            var subtotal = 0.0
-        for (item in lineasRecibo.keys){
-            val cantidad =  lineasRecibo[item]!!.first
-            val precio = lineasRecibo[item]!!.second
-            val precioLinea = cantidad * precio
-            System.out.printf("%-15s%-10s%-10s%-10s%n",item,cantidad,precio,precioLinea)
-            subtotal += precioLinea
-        }
-        println("\n\nSubtotal:\t$subtotal")
-        val total = subtotal - (subtotal*descuento/100)
-        println("Descuento:\t$descuento%")
-        println("Total:\t\t$total")
+interface IFacturador{
+    fun addClientInfo(nombre: String,direccion: String)
+    fun addLine(item:String,cantidad:Int,precio:String)
+    fun imprimirRecibo()
+    fun addDescuento(descuento: Double)
+
+}
+interface ICliente{
+    fun addName(nombre:String)
+    fun addAddress(direccion:String)
+}
+
+interface IImpresora{
+    fun imprimirRecibo(cliente: Cliente,cuadroFactura:CuadroFactura,descuento:Double){}
+}
+
+interface ICuadroFactura{
+    fun addLine(item:String,cantidad:Int,precio:String)
+}
+
+class Facturador():IFacturador {
+    private var descuento:Double = 0.0
+    private var cliente = Cliente()
+    private val cuadroFactura = CuadroFactura()
+    private val impresora = Impresora()
+
+    override fun addClientInfo(nombre: String,direccion: String){
+        cliente.addName(nombre)
+        cliente.addAddress(direccion)
     }
-    fun addLine(item:String = "no value",cantidad:Int,precio:String){
+    override fun addLine(item:String,cantidad:Int,precio:String){
         //Añade el elemento a la tabla
-        lineasRecibo.put(item,Pair(cantidad,precio.toDouble()))
+        cuadroFactura.addLine(item,cantidad,precio)
+    }
+
+    override fun imprimirRecibo(){
+        impresora.imprimirRecibo(cliente,cuadroFactura,descuento)
+    }
+    override fun addDescuento(descuento: Double){
+        this.descuento = descuento
     }
 }
 fun main(){
-    val factura = Factura()
-    factura.nombre = "Tienda Quimica"
-    factura.direccion = "Medellin, Cll 58B - 17"
-    factura.addLine("Tostador",3,"10")
-    factura.addLine("Mesa",1,"30")
-    factura.descuento = 10.0
-    factura.imprimirRecibo()
+    val facturador = Facturador()
+    facturador.addClientInfo("Tienda Química", "Medellin, Cll 58B - 17")
+    facturador.addLine("Tostador",3,"10")
+    facturador.addLine("Mesa",1,"30")
+    facturador.addDescuento(10.0)
+    facturador.imprimirRecibo()
 }
