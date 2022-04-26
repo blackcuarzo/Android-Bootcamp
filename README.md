@@ -1,4 +1,4 @@
-# examples-OOP-kotlin
+# About
 These are kotlin examples of using OOP 4 pillars and SOLID
 
 # Instructions
