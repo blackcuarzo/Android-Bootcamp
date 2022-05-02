@@ -1,3 +1,3 @@
 # About
 
-This is a repository used to register development history during the android bootcamp. 
+Development history of an android bootcamp sponsored by Ceiba and Globant. 
