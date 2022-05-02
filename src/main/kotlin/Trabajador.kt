@@ -1,6 +1,6 @@
 import kotlin.math.floor
 
-class Trabajador (val cargo:String, val horasBaseSemana:Int = 48, val pagoHora:Int,val unidadHorasBono:Int = 5, val unidadHorasExtra:Int = 10) {
+class Trabajador (val cargo:String,val pagoHora:Int, val horasBaseSemana:Int = 48, val unidadHorasBono:Int = 5, val unidadHorasExtra:Int = 10) {
     val horasBaseMensuales:Int
         get() {return horasBaseSemana * 4}
     var horasTrabajadas:Int = 0
