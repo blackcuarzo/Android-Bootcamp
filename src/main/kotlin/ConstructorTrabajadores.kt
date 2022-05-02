@@ -6,8 +6,8 @@ class ConstructorTrabajadores {
     val operador = Trabajador("Operador",48,10)
     val contador = Trabajador("Contador",48,50)
     init {
-        gerente.addHours(200.0)
-        operador.addHours(230.0)
-        contador.addHours(200.0)
+        gerente.addHours(200)
+        operador.addHours(230)
+        contador.addHours(200)
     }
 }
