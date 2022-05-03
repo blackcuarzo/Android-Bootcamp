@@ -1,5 +1,5 @@
 class Orquestador {
-    val trabajadores = ConstructorTrabajadores()
+    val trabajadores = Trabajadores()
 
     private var estado:String? = null
     fun run(){
