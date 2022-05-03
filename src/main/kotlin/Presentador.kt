@@ -8,7 +8,6 @@ class Presentador {
     fun mensajeError(){
         "Opción no disponible".imprimir()
     }
-    //fun String.darFormato
     fun menuInicio(){
         ("Bienvenido\n" +
                 "Por favor seleccione una opción:\n" +
