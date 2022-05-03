@@ -4,49 +4,41 @@ class Orquestador {
     fun run(){
         when(estado) {
             Estados.INICIO -> iniciarInterfaz()
-            Estados.CONSULTAR -> consultarTrabajador()
+            Estados.CONSULTAR,Estados.CONSULTARSALARIOS  -> consultarTrabajador()
             Estados.FIN -> {}
         }
     }
     private fun iniciarInterfaz(){
         presentador.menuInicio()
             when (readln()){
-                /*
-//                "1" -> {
-//                    estado = "Ingresar"
-//                    println("Opción ${estado.name.lowercase()} seleccionada")
-//                    break
-//                }
-                 */
                 "2" -> {
                     estado = Estados.CONSULTAR
-                    println("Opción ${estado.name.lowercase()} seleccionada")
+                    presentador.mensajesCambioEstado(estado)
                 }
                 "0" ->{
                     estado = Estados.FIN
-                    println("Muchas gracias")
+                    presentador.mensajesCambioEstado(estado)
                 }
                 else -> {
-                    println("Opción no disponible")
+                    presentador.mensajeError()
                 }
             }
         run()
     }
 
     private fun consultarTrabajador(){
-        presentador.menuConsultar()
-        print("Seleccionar opción: ")
+        if (estado == Estados.CONSULTAR) presentador.menuConsultarTrabajador() else presentador.menuConsultarSalario()
         when (val opcion = readln()){
                 "1","2","3" -> {
+                    estado = Estados.CONSULTARSALARIOS
                     val rol = Rol.values()[opcion.toInt()-1]
-                    println("El salario del ${rol.name.lowercase()} es ${rol.calcularSalario()}")
+                    presentador.imprimirSalario(rol)
                 }
                 "0" -> {
                     estado = Estados.INICIO
                 }
-                else -> println("Opción no disponible")
+                else -> presentador.mensajeError()
             }
         run()
     }
-
 }

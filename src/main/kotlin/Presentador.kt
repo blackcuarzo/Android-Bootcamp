@@ -1,22 +1,39 @@
 class Presentador {
+    private fun String.darFormato():String{
+        return this.toByteArray().toString(charset("ISO-8859-1"))
+    }
+    private fun String.imprimir(){
+        println(this.darFormato())
+    }
+    fun mensajeError(){
+        "Opción no disponible".imprimir()
+    }
+    //fun String.darFormato
     fun menuInicio(){
-        println("Bienvenido")
-        println("Por favor seleccione una opción:\n")
-        println("1. Ingresar")
-        println("2. Consultar")
-        println("0. Salir")
+        ("Bienvenido\n" +
+                "Por favor seleccione una opción:\n" +
+                "1. Ingresar\n" +
+                "2. Consultar\n" +
+                "0. Salir\n").imprimir()
     }
-    fun menuConsultar(){
-        println("Seleccione una opción:\n")
-        Rol.values().forEach{rol -> println("${rol.ordinal+1}. " + rol.name[0].uppercaseChar() + rol.name.lowercase().substring(1) )}
-        println("0. Volver al menu anterior")
+    fun menuConsultarTrabajador(){
+        val opciones = Rol.values().fold(""){texto,rol -> texto + ("${rol.ordinal+1}. " + rol.name[0].uppercaseChar() + rol.name.lowercase().substring(1) +"\n" )
+        }
+        ("Seleccione una opción:\n" +
+                opciones +
+                "0. Volver al menu anterior\n" +
+                "Seleccionar opción: ").imprimir()
     }
-    fun menuFin(){
-
+    fun menuConsultarSalario(){
+        "Seleccionar opción: ".imprimir()
     }
-    fun imprimirSalario(){
-        println("El salario del trabajador es: ")
-        print("2. Operario")
-        println("3. Contador")
+    fun mensajesCambioEstado(estado:Estados){
+        when(estado){
+            Estados.CONSULTAR  -> "Opción ${estado.name.lowercase()} seleccionada".imprimir()
+            Estados.FIN -> "Muchas gracias".imprimir()
+        }
+    }
+    fun imprimirSalario(rol:Rol){
+        "El salario del ${rol.name.lowercase()} es ${rol.calcularSalario()}".imprimir()
     }
 }
