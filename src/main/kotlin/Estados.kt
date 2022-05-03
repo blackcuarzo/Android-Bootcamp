@@ -1,3 +1,3 @@
 enum class Estados {
-    INICIO,CONSULTAR,VERSALARIO,FIN;
+    INICIO,CONSULTAR,FIN;
 }
