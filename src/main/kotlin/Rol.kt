@@ -51,7 +51,7 @@ fun Rol.selectorBono(){
     //var ganador:String?
     //Rol.values()
     val winer = Rol.values().reduce {
-            ganador, trabajador ->   if(trabajador.horasTrabajadas > ganador.horasTrabajadas) trabajador else{ganador}
+            ganador, trabajador ->   if(trabajador.horasTrabajadas > ganador.horasTrabajadas) trabajador else ganador
     }
     print(winer)
     for (rol in (Rol.values())){
