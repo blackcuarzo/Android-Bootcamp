@@ -9,5 +9,8 @@ fun main(){
     val rol:Rol = Rol.values()[0]
     rol.asignarHoras()
     rol.selectorBono()
+    println(Rol.GERENTE.calcularSalario())
+    println(Rol.OPERARIO.calcularSalario())
+    println(Rol.CONTADOR.calcularSalario())
     //Rol.selectorBono()
 }

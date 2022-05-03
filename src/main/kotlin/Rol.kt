@@ -1,36 +1,12 @@
 interface IRoles{
 }
-
 enum class Rol (val pagoHora:Int):IRoles  {
-
     GERENTE(200),
     OPERARIO(10),
     CONTADOR(50);
-
     //internal var pagoHora:Int = 0
     internal var horasTrabajadas:Int = 0
-/*
-//    override fun sumarHoras (horas: Int){
-//        horasTrabajadas += horas
-//    }
-//    override fun asignarPagoHora (_pagoHora: Int){
-//        pagoHora = _pagoHora
-//    }
- */
 
-/*
-//    companion object{
-//        fun today(obj: DAYS): Boolean {
-//            return obj.name.compareTo("SATURDAY") == 0 || obj.name.compareTo("SUNDAY") == 0
-//        }
-//        fun sum(hora: Int) {
-//            imp.
-//
-//            obj.name.compareTo("SATURDAY") == 0 || obj.name.compareTo("SUNDAY") == 0
-//        }
-//    }
-
- */
     companion object {
 //    fun selectorBono() {
 //        TODO("Not yet implemented")
@@ -44,40 +20,22 @@ fun Rol.asignarHoras(){
     Rol.CONTADOR.sumarHoras(200)
     Rol.GERENTE.sumarHoras(200)
     Rol.OPERARIO.sumarHoras(230)
-
 }
 
-fun Rol.selectorBono(){
-    //var ganador:String?
-    //Rol.values()
-    val winer = Rol.values().reduce {
-            ganador, trabajador ->   if(trabajador.horasTrabajadas > ganador.horasTrabajadas) trabajador else ganador
+fun Rol.selectorBono():Rol{
+    val ganadorBono = Rol.values().reduce {
+            ganador, competidor ->   if(competidor.horasTrabajadas > ganador.horasTrabajadas) competidor else ganador
     }
-    print(winer)
-    for (rol in (Rol.values())){
-
-    }
+    return ganadorBono
 }
 
+fun Rol.calcularSalario() :Int {
+    if(this == this.selectorBono())
+        return (horasTrabajadas+10)*(this.pagoHora)
+    else
+        return horasTrabajadas*(this.pagoHora)
+}
 
 //fun Rol.asignarPagoHora (_pagoHora: Int){
 //    pagoHora = _pagoHora
-//}
-
-
-enum class PaymentOption {
-    CASH,
-    CARD,
-    TRANSFER
-}
-
-//fun PaymentOption.startPayment(transaction: Int) {
-//    when (this) {
-//        PaymentOption.CASH -> showCashPaimenxtInfo(transaction)
-//        PaymentOption.CARD -> moveToCardPaymentPage(transaction)
-//        PaymentOption.TRANSFER -> {
-//            showMoneyTransferInfo()
-//            setupPaymentWatcher(transaction)
-//        }
-//    }
 //}
