@@ -1,38 +1,72 @@
+
 class Presentador {
+    private val empleados = ConstructorEmpleados().listaEmpleados()
+    private val recursosHumanos = Contador(empleados)
+    private var estado:Estados = Estados.INICIO
+
+
+    fun atenderEstado(estado: Estados): Estados {
+        var respuesta = estado
+        when(estado) {
+            Estados.INICIO -> {
+                menuConsultarTrabajador()
+                respuesta = Estados.CONSULTAR
+            }
+            Estados.CONSULTAR ->{
+
+            }
+            Estados.FIN -> {}
+        }
+        return respuesta
+    }
+    fun solicitarRespuesta(lectura:Int){
+        when(lectura){
+            1,2,3 -> {
+                val empleado = empleados[lectura - 1]
+                val salario = recursosHumanos.calcularSalario(empleado)
+                imprimirSalario(empleado,salario)
+                menuConsultarSalario()
+            }
+            0 ->{
+                estado = Estados.FIN
+                mensajesCambioEstado(estado)
+            }
+            else -> {
+                mensajeError()
+            }
+        }
+    }
+
     private fun String.darFormato():String{
         return this.toByteArray().toString(charset("ISO-8859-1"))
     }
     private fun String.imprimir(){
         println(this.darFormato())
     }
-    fun mensajeError(){
+    private fun mensajeError(){
         "Opción no disponible".imprimir()
     }
-    fun menuInicio(){
-        ("Bienvenido\n" +
-                "Por favor seleccione una opción:\n" +
-                "1. Ingresar\n" +
-                "2. Consultar\n" +
-                "0. Salir\n").imprimir()
-    }
-    fun menuConsultarTrabajador(){
-        val opciones = Rol.values().fold(""){texto,rol -> texto + ("${rol.ordinal+1}. " + rol.name[0].uppercaseChar() + rol.name.lowercase().substring(1) +"\n" )
-        }
+    private fun menuConsultarTrabajador(){
+        var opciones = ""
+        empleados.forEachIndexed { index, empleado -> opciones += "${index+1}. ${empleado.cargo}\n" }
         ("Seleccione una opción:\n" +
                 opciones +
-                "0. Volver al menu anterior\n" +
+                "0. Salir\n" +
                 "Seleccionar opción: ").imprimir()
     }
-    fun menuConsultarSalario(){
+    private fun menuConsultarSalario(){
         "Seleccionar opción: ".imprimir()
     }
-    fun mensajesCambioEstado(estado:Estados){
+    private fun mensajesCambioEstado(estado:Estados){
         when(estado){
             Estados.CONSULTAR  -> "Opción ${estado.name.lowercase()} seleccionada".imprimir()
             Estados.FIN -> "Muchas gracias".imprimir()
+            else -> {}
         }
     }
-    fun imprimirSalario(rol:Rol){
-        "El salario del ${rol.name.lowercase()} es ${rol.calcularSalario()}".imprimir()
+    private fun imprimirSalario(empleado:Empleado, salario:Int){
+        "El salario del ${empleado.cargo} es $salario".imprimir()
     }
 }
+
+
