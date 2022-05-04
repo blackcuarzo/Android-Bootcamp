@@ -3,69 +3,43 @@ class Presentador {
     private val empleados = ConstructorEmpleados().listaEmpleados()
     private val recursosHumanos = Contador(empleados)
     private var estado:Estados = Estados.INICIO
-
-
-    fun atenderEstado(estado: Estados): Estados {
-        var respuesta = estado
-        when(estado) {
-            Estados.INICIO -> {
-                menuConsultarTrabajador()
-                respuesta = Estados.CONSULTAR
+    fun solicitarRespuesta(lectura:String):String{
+        return when(lectura){
+            "999" ->{
+                return menuConsultarTrabajador()
             }
-            Estados.CONSULTAR ->{
-
-            }
-            Estados.FIN -> {}
-        }
-        return respuesta
-    }
-    fun solicitarRespuesta(lectura:Int){
-        when(lectura){
-            1,2,3 -> {
-                val empleado = empleados[lectura - 1]
+            "1","2","3" -> {
+                val opcion = lectura.toInt()
+                val empleado = empleados[opcion - 1]
                 val salario = recursosHumanos.calcularSalario(empleado)
-                imprimirSalario(empleado,salario)
+                return imprimirSalario(empleado,salario) +
                 menuConsultarSalario()
             }
-            0 ->{
+            "0" ->{
                 estado = Estados.FIN
-                mensajesCambioEstado(estado)
+                return "Fin"
             }
             else -> {
                 mensajeError()
             }
         }
     }
-
-    private fun String.darFormato():String{
-        return this.toByteArray().toString(charset("ISO-8859-1"))
+    private fun mensajeError():String{
+        return "Opción no disponible"
     }
-    private fun String.imprimir(){
-        println(this.darFormato())
-    }
-    private fun mensajeError(){
-        "Opción no disponible".imprimir()
-    }
-    private fun menuConsultarTrabajador(){
+    private fun menuConsultarTrabajador():String{
         var opciones = ""
         empleados.forEachIndexed { index, empleado -> opciones += "${index+1}. ${empleado.cargo}\n" }
-        ("Seleccione una opción:\n" +
+        return ("Seleccione una opción:\n" +
                 opciones +
                 "0. Salir\n" +
-                "Seleccionar opción: ").imprimir()
+                "Seleccionar opción: \n")
     }
-    private fun menuConsultarSalario(){
-        "Seleccionar opción: ".imprimir()
+    private fun menuConsultarSalario():String{
+        return "Seleccionar opción: \n"
     }
-    private fun mensajesCambioEstado(estado:Estados){
-        when(estado){
-            Estados.CONSULTAR  -> "Opción ${estado.name.lowercase()} seleccionada".imprimir()
-            Estados.FIN -> "Muchas gracias".imprimir()
-            else -> {}
-        }
-    }
-    private fun imprimirSalario(empleado:Empleado, salario:Int){
-        "El salario del ${empleado.cargo} es $salario".imprimir()
+    private fun imprimirSalario(empleado:Empleado, salario:Int):String{
+        return "El salario del ${empleado.cargo} es $salario \n"
     }
 }
 
