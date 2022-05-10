@@ -21,4 +21,9 @@ class Temporizer : Service() {
         tempo.schedule(timerTask { message.show()},timeInSeconds)
         return super.onStartCommand(intent, flags, startId)
     }
+
+    override fun onDestroy() {
+        Toast.makeText(this, "Service was destroyed", Toast.LENGTH_SHORT).show()
+        super.onDestroy()
+    }
 }
