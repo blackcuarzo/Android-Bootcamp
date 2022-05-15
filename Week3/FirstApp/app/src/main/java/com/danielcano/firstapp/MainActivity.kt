@@ -3,24 +3,20 @@ package com.danielcano.firstapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
-
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Toast.makeText(this,"Creating app",Toast.LENGTH_SHORT).show()
+        super.onCreate(savedInstanceState)
+        Toast.makeText(this,R.string.create_stage_message,Toast.LENGTH_SHORT).show()
         Log.d("LifeCycleMessages", "onCreate: App Created")
         val startButton:Button = findViewById(R.id.start_service_button)
         val seconds:EditText = findViewById(R.id.seconds_field)
         startButton.setOnClickListener { startService(Intent(this,Temporizer::class.java).putExtra("setTime",seconds.text.toString())) }
-
     }
 
     override fun onStart() {
@@ -49,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        Toast.makeText(this, "App Destroyed", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, R.string.destroy_stage_message, Toast.LENGTH_SHORT).show()
         Log.d("LifeCycleMessages", "onDestroy: App destroyed")
     }
 }
