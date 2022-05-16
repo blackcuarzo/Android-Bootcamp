@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">IMDbApp</string>
+    <string name="welcome_message">Hello World!</string>
 </resources>
