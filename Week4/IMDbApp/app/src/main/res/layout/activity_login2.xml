@@ -75,6 +75,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="@dimen/multiplier_26dp"
@@ -135,6 +136,7 @@
 
 
     <TextView
+        android:id="@+id/registration_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registration_text"
@@ -142,12 +144,12 @@
         android:textSize="@dimen/multiplier_7sp"
         />
     <TextView
+        android:id="@+id/guest_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:text="@string/login_guest"
         android:textSize="@dimen/multiplier_7sp"
-        android:autoLink="web"
         />
 
 
