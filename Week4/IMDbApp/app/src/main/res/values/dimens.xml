@@ -3,7 +3,7 @@
     <dimen name="logo_size">173dp</dimen>
     <dimen name="multiplier_7sp">14sp</dimen>
     <dimen name="multiplier_9sp">18sp</dimen>
-    <dimen name="multiplier_26dp">52sp</dimen>
+    <dimen name="multiplier_26dp">52dp</dimen>
     <dimen name="multiplier_17dp">34dp</dimen>
     <dimen name="multiplier_35">70dp</dimen>
     <dimen name="multiplier_7dp">14dp</dimen>
@@ -11,5 +11,6 @@
     <dimen name="multiplier_20dp">40dp</dimen>
     <dimen name="multiplier_34dp">68dp</dimen>
     <dimen name="multiplier_5dp">6dp</dimen>
+    <dimen name="multiplier_52dp">104dp</dimen>
 
 </resources>

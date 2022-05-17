@@ -11,7 +11,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="103dp"
+        android:layout_height="@dimen/multiplier_52dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_imdb_logo_2016"
 
@@ -20,22 +20,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/user_field_label"
-        android:textSize="14sp"
+        android:textSize="@dimen/multiplier_7sp"
         android:textStyle="bold"
-        android:paddingStart="52dp"
+        android:paddingStart="@dimen/multiplier_26dp"
         android:layout_marginBottom="@dimen/multiplier_5dp"
 
         />
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="@dimen/multiplier_34dp"
         android:labelFor="@+id/user"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusTopStart="12dp"
-        android:paddingStart="52dp"
-        android:paddingEnd="52dp"
+        app:boxCornerRadiusBottomEnd="@dimen/multiplier_7dp"
+        app:boxCornerRadiusTopEnd="@dimen/multiplier_7dp"
+        app:boxCornerRadiusBottomStart="@dimen/multiplier_7dp"
+        app:boxCornerRadiusTopStart="@dimen/multiplier_7dp"
+        android:paddingStart="@dimen/multiplier_26dp"
+        android:paddingEnd="@dimen/multiplier_26dp"
         android:layout_marginBottom="@dimen/multiplier_7dp"
         >
         <com.google.android.material.textfield.TextInputEditText
@@ -48,9 +48,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/pass_field_label"
-        android:textSize="14sp"
+        android:textSize="@dimen/multiplier_7sp"
         android:textStyle="bold"
-        android:paddingStart="52dp"
+        android:paddingStart="@dimen/multiplier_26dp"
         android:layout_marginBottom="@dimen/multiplier_5dp"
 
         />
