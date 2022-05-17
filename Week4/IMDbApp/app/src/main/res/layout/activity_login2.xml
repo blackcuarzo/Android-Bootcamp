@@ -57,16 +57,16 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="62dp"
+        android:layout_height="@dimen/multiplier_34dp"
         android:labelFor="@+id/pass"
-        android:paddingStart="52dp"
-        android:paddingEnd="52dp"
+        android:paddingStart="@dimen/multiplier_26dp"
+        android:paddingEnd="@dimen/multiplier_26dp"
         android:layout_marginBottom="@dimen/multiplier_7dp"
 
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusBottomEnd="@dimen/multiplier_6dp"
+        app:boxCornerRadiusTopEnd="@dimen/multiplier_6dp"
+        app:boxCornerRadiusBottomStart="@dimen/multiplier_6dp"
+        app:boxCornerRadiusTopStart="@dimen/multiplier_6dp"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
