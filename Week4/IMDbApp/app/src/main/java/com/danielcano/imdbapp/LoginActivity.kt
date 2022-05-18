@@ -8,20 +8,20 @@ import android.text.method.LinkMovementMethod
 import android.widget.Button
 import android.widget.TextView
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login2)
+        setContentView(R.layout.activity_login)
         val guestLink = findViewById<TextView>(R.id.guest_link)
         guestLink.movementMethod = LinkMovementMethod.getInstance()
 
         val registrationLink = findViewById<TextView>(R.id.registration_link)
         registrationLink.movementMethod = LinkMovementMethod.getInstance()
 
-        val abrirNavegador = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"))
+        val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"))
 
 
         val buttonLogin  = findViewById<Button>(R.id.login_button)
-        buttonLogin.setOnClickListener { startActivity(abrirNavegador)  }
+        buttonLogin.setOnClickListener { startActivity(webIntent)  }
     }
 }
