@@ -8,4 +8,10 @@
     <string name="pass_field_label">Contraseña</string>
     <string name="user_field_label">Usuario</string>
     <string name="search_hint">Buscar IMDB</string>
+    <string name="movie1_name">Duna</string>
+    <string name="movie2_name">MadMax</string>
+    <string name="movie3_name">The Batman</string>
+    <string name="movie1_description">Pelicula de ciencia ficcion con implicaciones geopoliticas y ambientales</string>
+    <string name="movie2_description">Carrera en futuro distopico</string>
+    <string name="movie3_description">Super héroe son inteligencia y apariencia de murciélago</string>
 </resources>
