@@ -17,5 +17,8 @@ class SearchActivity : AppCompatActivity() {
         val movieListAdapter = MovieListAdapter()
         movieList.adapter = movieListAdapter
 
+        val itemList = movies(this.resources)
+        movieListAdapter.submitList(itemList)
+
     }
 }

@@ -1,10 +1,14 @@
 package com.danielcano.imdbapp
 
+import androidx.annotation.DrawableRes
+
+
 data class Movie (
-    val id:Int,
     val name: String,
     val description: String,
     val year: Int,
     val actors: String,
-    val rating:Float
+    val rating:Float,
+    @DrawableRes
+    val thumbnail:Int
     )

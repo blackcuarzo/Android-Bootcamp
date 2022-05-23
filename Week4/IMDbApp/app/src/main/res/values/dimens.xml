@@ -13,5 +13,10 @@
     <dimen name="multiplier_5dp">6dp</dimen>
     <dimen name="multiplier_52dp">104dp</dimen>
     <dimen name="multiplier_6dp">12dp</dimen>
+    <dimen name="multiplier_8dp">16dp</dimen>
+    <dimen name="multiplier_45dp">90dp</dimen>
+    <dimen name="multiplier_65dp">130dp</dimen>
+    <dimen name="multiplier_15dp">30dp</dimen>
+    <dimen name="multiplier_12dp">24dp</dimen>
 
 </resources>
