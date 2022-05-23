@@ -2,9 +2,10 @@
     <string name="app_name">IMDbApp</string>
     <string name="welcome_message">Hello World!</string>
     <string name="social_text">O podes ingresar con</string>
-    <string name="registration_text">¿No tenes cuenta? <b><a href = "http://www.google.com">Regístrate</a></b></string>
-    <string name="login_guest"><a href ="http://www.google.com">Continuar como Invitado</a></string>
+    <string name="registration_text">¿No tenes cuenta? <b><a href="http://www.google.com">Regístrate</a></b></string>
+    <string name="login_guest"><a href="http://www.google.com">Continuar como Invitado</a></string>
     <string name="login_button">Login</string>
     <string name="pass_field_label">Contraseña</string>
     <string name="user_field_label">Usuario</string>
+    <string name="search_hint">Buscar IMDB</string>
 </resources>
