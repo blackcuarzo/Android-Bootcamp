@@ -11,8 +11,8 @@
     <string name="movie1_name">Duna</string>
     <string name="movie2_name">MadMax</string>
     <string name="movie3_name">Batman</string>
-    <string name="movie1_description">Pelicula de ciencia ficcion con implicaciones geopoliticas y ambientales</string>
-    <string name="movie2_description">Carrera en futuro distopico</string>
+    <string name="movie1_description">Película de ciencia ficción con implicaciones geopolíticas y ambientales</string>
+    <string name="movie2_description">Carrera en futuro distópico</string>
     <string name="movie3_description">Super héroe son inteligencia y apariencia de murciélago</string>
     <string name="movie_name_default">Movie Name</string>
     <string name="movie_year_default">Year of Movie</string>
