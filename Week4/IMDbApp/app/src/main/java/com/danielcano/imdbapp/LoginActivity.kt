@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.widget.Button
 import android.widget.TextView
+import java.util.*
+import kotlin.concurrent.timerTask
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,5 +25,9 @@ class LoginActivity : AppCompatActivity() {
 
         val buttonLogin  = findViewById<Button>(R.id.login_button)
         buttonLogin.setOnClickListener { startActivity(webIntent)  }
+
+//        Temporal direct call for SearchActivity
+        val searchIntent = Intent(this,SearchActivity::class.java)
+        startActivity(searchIntent)
     }
 }

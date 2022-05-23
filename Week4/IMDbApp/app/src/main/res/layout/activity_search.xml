@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity"
     android:orientation="vertical"
+    android:background="#f5f5f5"
     >
 
     <Button
@@ -13,7 +14,7 @@
         android:text="@string/search_hint"
         />
     <SearchView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:queryHint="@string/search_hint"
         >
