@@ -20,14 +20,18 @@ class LoginActivity : AppCompatActivity() {
         val registrationLink = findViewById<TextView>(R.id.registration_link)
         registrationLink.movementMethod = LinkMovementMethod.getInstance()
 
-        val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"))
+//        val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"))
 
 
         val buttonLogin  = findViewById<Button>(R.id.login_button)
-        buttonLogin.setOnClickListener { startActivity(webIntent)  }
+//        buttonLogin.setOnClickListener { startActivity(webIntent)  }
 
-//        Temporal direct call for SearchActivity
+
+//        Temporal call for SearchActivity
         val searchIntent = Intent(this,SearchActivity::class.java)
-        startActivity(searchIntent)
+        buttonLogin.setOnClickListener { startActivity(searchIntent)  }
+
+
+
     }
 }
