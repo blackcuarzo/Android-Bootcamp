@@ -20,11 +20,8 @@ class LoginActivity : AppCompatActivity() {
         val registrationLink = findViewById<TextView>(R.id.registration_link)
         registrationLink.movementMethod = LinkMovementMethod.getInstance()
 
-//        val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"))
-
 
         val buttonLogin  = findViewById<Button>(R.id.login_button)
-//        buttonLogin.setOnClickListener { startActivity(webIntent)  }
 
 
 //        Temporal call for SearchActivity
