@@ -1,3 +1,3 @@
 # About
 
-Development history of an android bootcamp sponsored by Ceiba and Globant. 
+Android bootcamp sponsored by Ceiba and Globant. 
