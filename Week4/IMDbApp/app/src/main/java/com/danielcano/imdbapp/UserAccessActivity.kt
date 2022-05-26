@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.widget.Button
 import android.widget.TextView
+import com.danielcano.imdbapp.access.LoginFragment
 
 class UserAccessActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,5 +24,9 @@ class UserAccessActivity : AppCompatActivity() {
         val searchIntent = Intent(this,SearchActivity::class.java)
         buttonLogin.setOnClickListener { startActivity(searchIntent)  }
 
+        supportFragmentManager
+            .beginTransaction()
+            .add(LoginFragment(), null)
+            .commit()
     }
 }
