@@ -28,4 +28,5 @@
     <string name="movie5_actors">Tom Holland, Benedict Cumberbatch, Tobey Maguire</string>
     <string name="movie_actors_default">Movie Actors</string>
     <string name="imdb_logo_description">Imdb logo</string>
+    <string name="login_frament_starting_text">Login blank fragment</string>
 </resources>
