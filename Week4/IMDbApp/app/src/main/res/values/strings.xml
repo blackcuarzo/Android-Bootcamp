@@ -27,4 +27,5 @@
     <string name="movie5_description">Un chico con traje de lencería intentando salvar el mundo</string>
     <string name="movie5_actors">Tom Holland, Benedict Cumberbatch, Tobey Maguire</string>
     <string name="movie_actors_default">Movie Actors</string>
+    <string name="imdb_logo_description">Imdb logo</string>
 </resources>
