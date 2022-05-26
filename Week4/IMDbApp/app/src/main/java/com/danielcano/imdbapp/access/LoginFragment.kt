@@ -18,6 +18,18 @@ class LoginFragment : Fragment() {
 
         // Code goes here
 
+        val guestLink = findViewById<TextView>(R.id.guest_link)
+        guestLink.movementMethod = LinkMovementMethod.getInstance()
+
+        val registrationLink = findViewById<TextView>(R.id.registration_link)
+        registrationLink.movementMethod = LinkMovementMethod.getInstance()
+
+        val buttonLogin  = findViewById<Button>(R.id.login_button)
+
+        Temporal call for SearchActivity
+        val searchIntent = Intent(this,SearchActivity::class.java)
+        buttonLogin.setOnClickListener { startActivity(searchIntent)  }
+
         return view
     }
 
