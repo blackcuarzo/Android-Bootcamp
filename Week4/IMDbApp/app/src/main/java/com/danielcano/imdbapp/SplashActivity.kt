@@ -11,7 +11,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        val loginIntent = Intent(this,LoginActivity::class.java)
+        val loginIntent = Intent(this,UserAccessActivity::class.java)
         Timer().schedule(timerTask { startActivity(loginIntent) },3000)
 
     }

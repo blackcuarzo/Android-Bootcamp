@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 
-class MovieListAdapter(): ListAdapter<Movie,MovieViewHolder>(MovieDiffCallback) {
+class MovieListAdapter : ListAdapter<Movie,MovieViewHolder>(MovieDiffCallback) {
     object MovieDiffCallback:DiffUtil.ItemCallback<Movie>() {
         override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
             return oldItem === newItem

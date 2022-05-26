@@ -10,7 +10,7 @@ import android.widget.TextView
 import java.util.*
 import kotlin.concurrent.timerTask
 
-class LoginActivity : AppCompatActivity() {
+class UserAccessActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
