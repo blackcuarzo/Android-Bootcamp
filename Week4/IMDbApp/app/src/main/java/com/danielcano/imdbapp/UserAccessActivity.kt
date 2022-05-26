@@ -26,7 +26,7 @@ class UserAccessActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .add(LoginFragment(), null)
+            .add(R.id.activity_user_access,LoginFragment())
             .commit()
     }
 }
