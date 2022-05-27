@@ -11,7 +11,8 @@ import android.widget.TextView
 import com.danielcano.imdbapp.AccessNavigator
 import com.danielcano.imdbapp.R
 
-class LoginFragment : Fragment() {
+// In the constructor we set a parameter onRegistrationListener of type anonymous function with Unit(void) return
+class LoginFragment(val onRegistrationListener:(view:View)->Unit) : Fragment() {
 
     private lateinit var navigator:AccessNavigator
     override fun onAttach(context: Context) {
@@ -32,10 +33,10 @@ class LoginFragment : Fragment() {
         guestLink.setOnClickListener {
             navigator.navigateToRegister()
         }
-
+        //We did this in meeting 10, using anonymous functions i don't need to implement interfaces
         val registrationLink = view.findViewById<TextView>(R.id.registration_link)
-        registrationLink.setOnClickListener {
-            navigator.navigateToRegister()
+        registrationLink.setOnClickListener{
+            onRegistrationListener(it)
         }
 
         val buttonLogin  = view.findViewById<Button>(R.id.login_button)
