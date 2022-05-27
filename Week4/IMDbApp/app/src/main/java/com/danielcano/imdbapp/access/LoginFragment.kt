@@ -31,9 +31,9 @@ class LoginFragment(val onRegistrationListener:(view:View)->Unit) : Fragment() {
 
         val guestLink = view.findViewById<TextView>(R.id.guest_link)
         guestLink.setOnClickListener {
-            navigator.navigateToRegister()
+            navigator.navigateToRegistration()
         }
-        //We did this in meeting 10, using anonymous functions i don't need to implement interfaces
+
         val registrationLink = view.findViewById<TextView>(R.id.registration_link)
         registrationLink.setOnClickListener{
             onRegistrationListener(it)
@@ -41,7 +41,7 @@ class LoginFragment(val onRegistrationListener:(view:View)->Unit) : Fragment() {
 
         val buttonLogin  = view.findViewById<Button>(R.id.login_button)
         buttonLogin.setOnClickListener {
-            navigator.navigateToRegister()
+            navigator.navigateToRegistration()
         }
 
         return view

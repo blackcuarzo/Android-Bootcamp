@@ -19,6 +19,7 @@ class RegistrationFragment : Fragment() {
         //Code goes here
 
 
+
         return view
     }
 }
