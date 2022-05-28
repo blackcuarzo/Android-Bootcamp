@@ -12,23 +12,14 @@ class UserAccessActivity : AppCompatActivity(), AccessNavigator {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_access)
 
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragmentContainer,LoginFragment(::onRegistrationListener))
-            .commit()
+
     }
 
     override fun navigateToRegistration() {
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragmentContainer,RegistrationFragment())
-            .commit()
+
     }
 
     private fun onRegistrationListener (view: View){
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragmentContainer,RegistrationFragment())
-            .commit()
+
     }
 }

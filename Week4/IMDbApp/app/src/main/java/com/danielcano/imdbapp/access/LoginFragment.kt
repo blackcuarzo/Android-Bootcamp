@@ -12,7 +12,7 @@ import com.danielcano.imdbapp.AccessNavigator
 import com.danielcano.imdbapp.R
 
 // In the constructor we set a parameter onRegistrationListener of type anonymous function with Unit(void) return
-class LoginFragment(val onRegistrationListener:(view:View)->Unit) : Fragment() {
+class LoginFragment: Fragment() {
 
     private lateinit var navigator:AccessNavigator
     override fun onAttach(context: Context) {
@@ -36,7 +36,6 @@ class LoginFragment(val onRegistrationListener:(view:View)->Unit) : Fragment() {
 
         val registrationLink = view.findViewById<TextView>(R.id.registration_link)
         registrationLink.setOnClickListener{
-            onRegistrationListener(it)
         }
 
         val buttonLogin  = view.findViewById<Button>(R.id.login_button)
