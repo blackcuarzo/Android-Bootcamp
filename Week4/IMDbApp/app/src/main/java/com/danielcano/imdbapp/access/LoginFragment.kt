@@ -31,16 +31,17 @@ class LoginFragment: Fragment() {
 
         val guestLink = view.findViewById<TextView>(R.id.guest_link)
         guestLink.setOnClickListener {
-            navigator.navigateToRegistration()
+            navigator.navigateToRegistration(it)
         }
 
         val registrationLink = view.findViewById<TextView>(R.id.registration_link)
         registrationLink.setOnClickListener{
+            navigator.navigateToRegistration(it)
         }
 
         val buttonLogin  = view.findViewById<Button>(R.id.login_button)
         buttonLogin.setOnClickListener {
-            navigator.navigateToRegistration()
+            navigator.navigateToRegistration(it)
         }
 
         return view
