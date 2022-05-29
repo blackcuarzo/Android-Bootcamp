@@ -29,4 +29,8 @@
     <string name="movie_actors_default">Movie Actors</string>
     <string name="imdb_logo_description">Imdb logo</string>
     <string name="login_frament_starting_text">Login blank fragment</string>
+    <string name="access_name_label">Nombre</string>
+    <string name="access_mail_label">Correo electrónico</string>
+    <string name="access_pass_label">Contraseña</string>
+    <string name="access_confirmation_button_text">Aceptar</string>
 </resources>

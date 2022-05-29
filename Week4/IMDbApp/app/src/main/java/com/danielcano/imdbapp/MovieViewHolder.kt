@@ -6,10 +6,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    private val nameText = itemView.findViewById<TextView>(R.id.nameText)
-    private val actorsText = itemView.findViewById<TextView>(R.id.actorsText)
-    private val thumbnailImage: ImageView = itemView.findViewById(R.id.thumbnailImage)
-    private val yearText: TextView = itemView.findViewById(R.id.yearText)
+    private val nameText = itemView.findViewById<TextView>(R.id.movieNameText)
+    private val actorsText = itemView.findViewById<TextView>(R.id.movieActorsText)
+    private val thumbnailImage: ImageView = itemView.findViewById(R.id.movieThumbnailImage)
+    private val yearText: TextView = itemView.findViewById(R.id.movieYearText)
 
     fun bind(movie: Movie){
         nameText.text = movie.name

@@ -7,7 +7,7 @@
     >
 
     <ImageView
-        android:id="@+id/thumbnailImage"
+        android:id="@+id/movieThumbnailImage"
         android:layout_width="@dimen/multiplier_45dp"
         android:layout_height="@dimen/multiplier_65dp"
 
@@ -19,20 +19,20 @@
         />
 
     <TextView
-        android:id="@+id/nameText"
+        android:id="@+id/movieNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:text="@string/movie_name_default"
         android:textSize="@dimen/multiplier_9sp"
-        app:layout_constraintBottom_toTopOf="@+id/yearText"
-        app:layout_constraintStart_toEndOf="@+id/thumbnailImage"
+        app:layout_constraintBottom_toTopOf="@+id/movieYearText"
+        app:layout_constraintStart_toEndOf="@+id/movieThumbnailImage"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="@dimen/multiplier_9dp"
         />
 
     <TextView
-        android:id="@+id/yearText"
+        android:id="@+id/movieYearText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/multiplier_9dp"
@@ -40,18 +40,18 @@
         android:text="@string/movie_year_default"
         android:textSize="@dimen/multiplier_9sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/thumbnailImage"
+        app:layout_constraintStart_toEndOf="@+id/movieThumbnailImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/actorsText"
+        android:id="@+id/movieActorsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/movie_actors_default"
         android:textSize="@dimen/multiplier_7sp"
 
-        app:layout_constraintStart_toEndOf="@+id/thumbnailImage"
-        app:layout_constraintTop_toBottomOf="@+id/yearText"
+        app:layout_constraintStart_toEndOf="@+id/movieThumbnailImage"
+        app:layout_constraintTop_toBottomOf="@+id/movieYearText"
         android:layout_marginTop="@dimen/multiplier_17dp"
         android:layout_marginStart="@dimen/multiplier_9dp"
 
