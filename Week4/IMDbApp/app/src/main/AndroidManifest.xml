@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IMDbApp">
         <activity
-            android:name=".SearchActivity"
+            android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".UserAccessActivity"

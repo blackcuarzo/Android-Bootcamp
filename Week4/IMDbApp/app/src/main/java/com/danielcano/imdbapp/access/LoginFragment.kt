@@ -41,7 +41,7 @@ class LoginFragment: Fragment() {
 
         val buttonLogin  = view.findViewById<Button>(R.id.login_button)
         buttonLogin.setOnClickListener {
-            navigator.navigateToRegistration(it)
+            navigator.navigateToMenu()
         }
 
         return view

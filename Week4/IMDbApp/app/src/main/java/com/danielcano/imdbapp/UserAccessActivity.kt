@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.danielcano.imdbapp.access.LoginFragmentDirections
 import com.danielcano.imdbapp.access.RegistrationFragmentDirections
 
@@ -36,15 +34,19 @@ class UserAccessActivity : AppCompatActivity(), AccessNavigator {
 
     override fun navigateToRegistration(view:View) {
         val action = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
-//        view.findNavController().navigate(action)
-        findNavController(R.id.nav_host_access_fragment).navigate(action)
-        findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar).setBackgroundColor(getColor(R.color.white))
+        view.findNavController().navigate(action)
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.setBackgroundColor(getColor(R.color.white))
     }
 
     override fun navigateToLogin() {
         val action = RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment()
         findNavController(R.id.nav_host_access_fragment).navigate(action)
-//        findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar).setBackgroundColor(androidx.appcompat.R.attr.colorPrimary)
+    }
+
+    override fun navigateToMenu() {
+        findNavController(R.id.nav_host_access_fragment).navigate(R.id.menuActivity)
+
     }
 
 
@@ -59,6 +61,4 @@ class UserAccessActivity : AppCompatActivity(), AccessNavigator {
             else -> navController.navigateUp()
         }
     }
-
-
 }

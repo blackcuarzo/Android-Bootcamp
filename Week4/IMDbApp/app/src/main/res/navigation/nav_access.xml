@@ -17,6 +17,9 @@
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment"
             />
+        <action
+            android:id="@+id/action_loginFragment_to_menuActivity"
+            app:destination="@id/menuActivity" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -27,4 +30,10 @@
             android:id="@+id/action_registrationFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <activity
+        android:id="@+id/menuActivity"
+        android:name="com.danielcano.imdbapp.MenuActivity"
+        android:label="activity_menu"
+        tools:layout="@layout/activity_menu"
+        />
 </navigation>
