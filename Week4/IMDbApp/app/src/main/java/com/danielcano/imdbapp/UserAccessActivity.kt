@@ -14,7 +14,7 @@ class UserAccessActivity : AppCompatActivity(), AccessNavigator {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_access)
 
-        val navController = findNavController(R.id.nav_host_access_fragment)
+        val navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         //setSupportActionBar(toolbar)
@@ -41,18 +41,18 @@ class UserAccessActivity : AppCompatActivity(), AccessNavigator {
 
     override fun navigateToLogin() {
         val action = RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment()
-        findNavController(R.id.nav_host_access_fragment).navigate(action)
+        findNavController(R.id.nav_host_fragment).navigate(action)
     }
 
     override fun navigateToMenu() {
-        findNavController(R.id.nav_host_access_fragment).navigate(R.id.menuActivity)
+        findNavController(R.id.nav_host_fragment).navigate(R.id.menuActivity)
 
     }
 
 
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_access_fragment)
+        val navController = findNavController(R.id.nav_host_fragment)
         return when(navController.currentDestination?.id){
             R.id.registrationFragment ->{
                 findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar).setBackgroundColor(androidx.appcompat.R.attr.colorPrimary)

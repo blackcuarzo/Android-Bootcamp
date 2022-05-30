@@ -11,9 +11,6 @@ class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.activity_menu,SearchFragment())
-            .commit()
+
     }
 }
