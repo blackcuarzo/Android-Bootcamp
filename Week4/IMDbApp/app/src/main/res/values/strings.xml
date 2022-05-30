@@ -35,4 +35,8 @@
     <string name="access_confirmation_button_text">Aceptar</string>
     <string name="pass_helper_instruction">La contraseña debe contener 8 caracteres</string>
     <string name="account_creation">Crear una cuenta</string>
+    <string name="menu_start">Inicio</string>
+    <string name="menu_search">Buscar</string>
+    <string name="menu_play">Play</string>
+    <string name="menu_name">Name</string>
 </resources>

@@ -7,10 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="yellow_brand">#f7c703</color>
+    <color name="yellow_brand">#f5c519</color>
     <color name="yellow_darker">#f3c518</color>
     <color name="button_login">#9c9c9c</color>
     <color name="login_button_text">#cecece</color>
     <color name="toolbar_color_control_normal">#FFFFFFFF</color>
-
+    <color name="colorPrimary">@color/yellow_brand</color>
 </resources>
