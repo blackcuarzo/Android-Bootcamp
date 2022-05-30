@@ -21,15 +21,15 @@ class SearchFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_search, container, false)
 //
 //        //Code goes here
-//        val movieList: RecyclerView = view.findViewById(R.id.movieList)
-//
-//        movieList.layoutManager = LinearLayoutManager(requireContext())
-//
-//        val movieListAdapter = MovieListAdapter()
-//        movieList.adapter = movieListAdapter
-//
-//        val itemList = movies(this.resources)
-//        movieListAdapter.submitList(itemList)
+        val movieList: RecyclerView = view.findViewById(R.id.movieList)
+
+        movieList.layoutManager = LinearLayoutManager(requireContext())
+
+        val movieListAdapter = MovieListAdapter()
+        movieList.adapter = movieListAdapter
+
+        val itemList = movies(this.resources)
+        movieListAdapter.submitList(itemList)
 
         return view
     }
