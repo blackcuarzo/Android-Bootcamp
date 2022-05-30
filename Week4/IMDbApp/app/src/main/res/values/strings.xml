@@ -33,4 +33,6 @@
     <string name="access_mail_label">Correo electrónico</string>
     <string name="access_pass_label">Contraseña</string>
     <string name="access_confirmation_button_text">Aceptar</string>
+    <string name="pass_helper_instruction">La contraseña debe contener 8 caracteres</string>
+    <string name="account_creation">Crear una cuenta</string>
 </resources>

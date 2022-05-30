@@ -11,5 +11,6 @@
     <color name="yellow_darker">#f3c518</color>
     <color name="button_login">#9c9c9c</color>
     <color name="login_button_text">#cecece</color>
+    <color name="toolbar_color_control_normal">#FFFFFFFF</color>
 
 </resources>

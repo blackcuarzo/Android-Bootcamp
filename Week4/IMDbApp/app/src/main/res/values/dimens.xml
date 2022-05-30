@@ -18,5 +18,7 @@
     <dimen name="multiplier_65dp">130dp</dimen>
     <dimen name="multiplier_15dp">30dp</dimen>
     <dimen name="multiplier_12dp">24dp</dimen>
+    <dimen name="multiplier_8sp">16sp</dimen>
+    <dimen name="multiplier_24dp">48dp</dimen>
 
 </resources>

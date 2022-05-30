@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_access"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/loginFragment"
+    >
 
 
     <fragment
@@ -14,7 +15,8 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            app:destination="@id/registrationFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
