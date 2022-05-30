@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_menu"
     tools:context=".MenuActivity"
     android:orientation="vertical"
-    android:background="#f5f5f5"
-    >
+    android:background="#f5f5f5">
 
-    <androidx.appcompat.widget.SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:queryHint="@string/search_hint"
-        >
-
-    </androidx.appcompat.widget.SearchView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/movieList"
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.danielcano.imdbapp.menu.SearchFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         />
 
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
