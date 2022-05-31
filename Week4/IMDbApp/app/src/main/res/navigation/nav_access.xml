@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_registrationFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_menuActivity2"
+            app:destination="@id/menuActivity" />
     </fragment>
     <activity
         android:id="@+id/menuActivity"

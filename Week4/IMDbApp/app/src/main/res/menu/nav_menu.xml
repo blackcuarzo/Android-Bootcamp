@@ -11,16 +11,16 @@
         android:icon="@drawable/ic_baseline_search_24"
         android:title="@string/menu_search"
         />
-<!--    <item-->
-<!--        android:icon="@drawable/ic_baseline_play_circle_filled_24"-->
-<!--        android:title="@string/menu_play"-->
-<!--        android:enabled="true"-->
-<!--        />-->
-<!--    <item-->
-<!--        android:icon="@drawable/ic_baseline_account_circle_24"-->
-<!--        android:title="@string/menu_name"-->
-<!--        android:enabled="true"-->
-<!--        />-->
+    <item
+        android:id="@+id/playFragment"
+        android:icon="@drawable/ic_baseline_play_circle_filled_24"
+        android:title="@string/menu_play"
+        />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="@string/menu_name"
+        />
 
 
 

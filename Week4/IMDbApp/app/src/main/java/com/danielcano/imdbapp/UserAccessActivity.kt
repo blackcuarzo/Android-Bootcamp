@@ -46,7 +46,6 @@ class UserAccessActivity : AppCompatActivity(), AccessNavigator {
 
     override fun navigateToMenu() {
         findNavController(R.id.nav_host_fragment).navigate(R.id.menuActivity)
-
     }
 
 
