@@ -48,8 +48,6 @@ class UserAccessActivity : AppCompatActivity(), AccessNavigator {
         findNavController(R.id.nav_host_fragment).navigate(R.id.menuActivity)
     }
 
-
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return when(navController.currentDestination?.id){

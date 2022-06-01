@@ -16,10 +16,8 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
         val navController = findNavController(R.id.nav_host_fragment2)
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
         val bottomNavigationMenu = findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationMenu.setupWithNavController(navController)
-//        NavigationUI.setupWithNavController(bottomNavigationMenu, navController, true)
 
     }
 }

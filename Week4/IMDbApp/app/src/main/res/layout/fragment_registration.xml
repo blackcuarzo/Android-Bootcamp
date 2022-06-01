@@ -9,7 +9,6 @@
     android:background="@color/white"
     >
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="@dimen/multiplier_65dp"

@@ -32,6 +32,7 @@ class LoginFragment: Fragment() {
 
         val guestLink = view.findViewById<TextView>(R.id.guest_link)
         guestLink.setOnClickListener {
+
             navigator.navigateToRegistration(it)
         }
 
