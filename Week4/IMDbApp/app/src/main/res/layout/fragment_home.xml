@@ -15,24 +15,81 @@
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp">
+            android:layout_height="275dp"
+            app:layout_scrollFlags="scroll"
+            app:contentScrim="@color/yellow_brand"
+            >
 
-            <ImageView
-                android:id="@+id/previewImage"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/stranger_things_scene" />
+                android:background="@color/white"
+                >
 
-            <ImageView
-                android:layout_width="@dimen/multiplier_34dp"
-                android:layout_height="@dimen/multiplier_34dp"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:src="@drawable/ic_baseline_play_circle_outline_24"
-                app:layout_anchor="@+id/previewImage"
-                app:layout_anchorGravity="center"
-                app:tint="@color/white" />
+                <ImageView
+                    android:id="@+id/previewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/stranger_things_scene"
 
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/guideline_two_thirds"
+                    />
+
+                <ImageView
+                    android:layout_width="@dimen/multiplier_34dp"
+                    android:layout_height="@dimen/multiplier_34dp"
+                    android:src="@drawable/ic_baseline_play_circle_outline_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/previewImage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/previewImage"
+                    app:layout_constraintTop_toTopOf="@+id/previewImage"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="125dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/multiplier_12dp"
+
+                    android:layout_marginBottom="@dimen/multiplier_12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/stranger_things_thumbnail"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="@id/guideline_half" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_two_thirds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.7" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_half"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.33" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/previewImage"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -42,6 +99,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
         <LinearLayout
