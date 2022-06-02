@@ -13,4 +13,12 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <TextView
+        android:id="@+id/movieName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Movie name"
+        android:textSize="@dimen/multiplier_12dp"
+        />
+
 </FrameLayout>

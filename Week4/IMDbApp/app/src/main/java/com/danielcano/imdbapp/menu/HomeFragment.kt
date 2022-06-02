@@ -12,6 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.danielcano.imdbapp.Movie
 import com.danielcano.imdbapp.MovieListAdapter
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.movies
@@ -28,12 +29,17 @@ class HomeFragment: Fragment() {
 
         movieList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
 
-        val movieListAdapter = MovieListAdapter()
+        val movieListAdapter = MovieListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
 
         val itemList = movies(this.resources)
         movieListAdapter.submitList(itemList)
 
         return view
+    }
+
+    private fun showMovieDetails(movie:Movie){
+        val action = HomeFragmentDirections.actionHomeFragmentToMovieDetailsFragment(movie.name)
+        findNavController().navigate(action)
     }
 }

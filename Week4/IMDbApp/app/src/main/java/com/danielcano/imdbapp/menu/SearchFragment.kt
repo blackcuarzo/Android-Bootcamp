@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.danielcano.imdbapp.Movie
 import com.danielcano.imdbapp.MovieListAdapter
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.movies
@@ -25,7 +27,7 @@ class SearchFragment : Fragment() {
 
         movieList.layoutManager = LinearLayoutManager(requireContext())
 
-        val movieListAdapter = MovieListAdapter()
+        val movieListAdapter = MovieListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
 
         val itemList = movies(this.resources)
@@ -33,4 +35,9 @@ class SearchFragment : Fragment() {
 
         return view
     }
+    private fun showMovieDetails(movie: Movie){
+        val action = SearchFragmentDirections.actionSearchFragmentToMovieDetailsFragment(movie.name)
+        findNavController().navigate(action)
+    }
 }
+
