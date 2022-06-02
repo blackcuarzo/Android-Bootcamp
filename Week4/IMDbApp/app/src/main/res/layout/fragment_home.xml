@@ -132,6 +132,24 @@
 
             <View style="@style/Divider"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/multiplier_12dp"
+                android:layout_margin="@dimen/multiplier_8dp"
+                android:textColor="@color/black"
+                android:text="Las mejores selecciones"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recomendationList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <View style="@style/Divider"/>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
