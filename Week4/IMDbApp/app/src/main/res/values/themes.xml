@@ -79,5 +79,10 @@
         <item name="android:layout_height">20dp</item>
         <item name="android:foreground">@android:color/darker_gray</item>
     </style>
+    
+    <style name="ExpandedCustom">
+        <item name="android:textColor">#00000000</item>
+        <item name="android:textSize">0sp</item>
+    </style>
 
 </resources>

@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.danielcano.imdbapp.menu.HomeFragment"
-        android:label="HomeFragment"
+        android:label="@null"
         tools:layout="@layout/fragment_home"
         >
         <action

@@ -20,9 +20,6 @@ class HomeFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val navController = findNavController()
-        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setupWithNavController(navController)
 
 
         return view

@@ -16,15 +16,17 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="275dp"
-            app:layout_scrollFlags="scroll"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:contentScrim="@color/yellow_brand"
+            android:theme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar"
+            app:expandedTitleTextAppearance="@style/ExpandedCustom"
             >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"
-                >
+                app:layout_collapseMode="pin">
 
                 <ImageView
                     android:id="@+id/previewImage"
@@ -33,13 +35,13 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/stranger_things_scene"
 
+                    app:layout_constraintBottom_toBottomOf="@id/guideline_two_thirds"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/guideline_two_thirds"
-                    />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
+                    android:id="@+id/imageView3"
                     android:layout_width="@dimen/multiplier_34dp"
                     android:layout_height="@dimen/multiplier_34dp"
                     android:src="@drawable/ic_baseline_play_circle_outline_24"
@@ -64,6 +66,30 @@
 
                     app:layout_constraintTop_toTopOf="@id/guideline_half" />
 
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/multiplier_6dp"
+                    android:layout_marginStart="@dimen/multiplier_8dp"
+                    android:text="Stranger Things"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/previewImage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="4dp"
+                    android:text="Trailer Oficial"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline_two_thirds"
                     android:layout_width="wrap_content"
@@ -78,19 +104,15 @@
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent="0.33" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="0dp"
-                    android:layout_height="?attr/actionBarSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
-                    app:layout_constraintTop_toBottomOf="@+id/previewImage"
-                    />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+                app:layout_collapseMode="pin"
+                />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -107,6 +129,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
+
+            <View style="@style/Divider"/>
 
             <ImageView
                 android:layout_width="match_parent"
