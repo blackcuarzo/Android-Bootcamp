@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.danielcano.imdbapp.AccessNavigator
 import com.danielcano.imdbapp.R
 
@@ -26,6 +29,10 @@ class RegistrationFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_registration, container, false)
 
         //Code goes here
+        //Toolbar set up
+        val navController = findNavController()
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
+        toolbar.setupWithNavController(navController)
 
         val registrationLink = view.findViewById<TextView>(R.id.confirmationButton)
         registrationLink.setOnClickListener{

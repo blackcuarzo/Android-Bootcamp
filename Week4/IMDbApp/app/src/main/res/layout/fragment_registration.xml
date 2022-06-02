@@ -9,15 +9,23 @@
     android:background="@color/white"
     >
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="@dimen/multiplier_65dp"
-        android:layout_marginStart="@dimen/multiplier_12dp"
         android:layout_height="@dimen/multiplier_34dp"
+        android:layout_marginStart="@dimen/multiplier_12dp"
         android:contentDescription="@string/imdb_logo_description"
         android:src="@drawable/ic_imdb_logo_2016"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
