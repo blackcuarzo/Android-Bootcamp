@@ -81,6 +81,25 @@
         <argument
             android:name="name"
             app:argType="string"/>
+        <argument
+            android:name="name_es"
+            app:argType="string"/>
+        <argument
+            android:name="synopsis"
+            app:argType="string"/>
+        <argument
+            android:name="preview"
+            app:argType="integer"/>
+        <argument
+            android:name="thumbnail"
+            app:argType="integer"/>
+        <argument
+            android:name="shortDescription"
+            app:argType="string"
+            />
+        <argument
+            android:name="numberEpisodes"
+            app:argType="integer"/>
         <action
             android:id="@+id/action_movieDetailsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />

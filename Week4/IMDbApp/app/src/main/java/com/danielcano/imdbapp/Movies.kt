@@ -6,44 +6,85 @@ fun movies (resources: Resources): List<Movie> {
     return listOf(
         Movie(
             name = resources.getString(R.string.movie1_name),
-            year = 2022,
+            name_es = "Duna",
+            year = "2022",
             actors = resources.getString(R.string.movie1_actors),
-            description = resources.getString(R.string.movie1_description),
+            synopsis = resources.getString(R.string.movie1_synopsis),
             rating = 8.8F,
-            thumbnail = R.drawable.dune_thumbnail
+            thumbnail = R.drawable.dune_thumbnail,
+            category = "Movie",
+            numberEpisodes = 1,
+            preview = R.drawable.dune_preview
         ),
         Movie(
-            name = resources.getString(R.string.movie2_name),
-            year = 2015,
-            actors = resources.getString(R.string.movie2_actors),
-            description = resources.getString(R.string.movie2_description),
+            name = resources.getString(R.string.movie6_name),
+            name_es = "Gámbito de dama",
+            year = "2020 - 2020 16",
+            actors = resources.getString(R.string.movie6_actors),
+            synopsis = resources.getString(R.string.movie6_synopsis),
             rating = 9.0F,
-            thumbnail = R.drawable.madmax_thumbnail
-
+            thumbnail = R.drawable.queengambit_thumbnail,
+            category = "Miniserie de TV",
+            numberEpisodes = 7,
+            preview = R.drawable.queengambit_preview
+        ),Movie(
+            name = resources.getString(R.string.movie7_name),
+            name_es = resources.getString(R.string.movie7_name),
+            year = "2016 - 2022",
+            actors = resources.getString(R.string.movie7_actors),
+            synopsis = resources.getString(R.string.movie7_synopsis),
+            rating = 9.0F,
+            thumbnail = R.drawable.stranger_things_thumbnail,
+            category = "Movie",
+            numberEpisodes = 9,
+            preview = R.drawable.strangerthings_preview
+        ),Movie(
+            name = resources.getString(R.string.movie2_name),
+            name_es = "MadMax: Furia en la carretera",
+            year = "2015",
+            actors = resources.getString(R.string.movie2_actors),
+            synopsis = resources.getString(R.string.movie2_synopsis),
+            rating = 9.0F,
+            thumbnail = R.drawable.madmax_thumbnail,
+            category = "Movie",
+            numberEpisodes = 1,
+            preview = R.drawable.madmax_preview
         ),
         Movie(
             name = resources.getString(R.string.movie3_name),
-            year = 2022,
+            name_es = "El batman",
+            year = "2022",
             actors = resources.getString(R.string.movie3_actors),
-            description = resources.getString(R.string.movie3_description),
+            synopsis = resources.getString(R.string.movie3_synopsis),
             rating = 6.5F,
-            thumbnail = R.drawable.batman_thumbnail
+            thumbnail = R.drawable.batman_thumbnail,
+            category = "Movie",
+            numberEpisodes = 1,
+            preview = R.drawable.batman_preview
         ),
         Movie(
             name = resources.getString(R.string.movie4_name),
-            year = 2016,
+            name_es = resources.getString(R.string.movie4_name),
+            year = "2016",
             actors = resources.getString(R.string.movie4_actors),
-            description = resources.getString(R.string.movie4_description),
+            synopsis = resources.getString(R.string.movie4_synopsis),
             rating = 8.0F,
-            thumbnail = R.drawable.deadpool_thumbnail
+            thumbnail = R.drawable.deadpool_thumbnail,
+            category = "Movie",
+            numberEpisodes = 1,
+            preview = R.drawable.deadpool_preview
         ),
         Movie(
             name = resources.getString(R.string.movie5_name),
-            year = 2021,
+            name_es = "Spider-Man: sin camino a casa",
+            year = "2021",
             actors = resources.getString(R.string.movie5_actors),
-            description = resources.getString(R.string.movie5_description),
+            synopsis = resources.getString(R.string.movie5_synopsis),
             rating = 9.8F,
-            thumbnail = R.drawable.spiderman_thumbnail
+            thumbnail = R.drawable.spiderman_thumbnail,
+            category = "Movie",
+            numberEpisodes = 1,
+            preview = R.drawable.spiderman_preview
         )
 
     )

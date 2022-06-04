@@ -1,24 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menu.MovieDetailsFragment">
+    tools:context=".menu.MovieDetailsFragment"
+    android:background="@color/white"
+    >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <TextView
-        android:id="@+id/movieName"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="DefaultTitle"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Movie name"
-        android:textSize="@dimen/multiplier_12dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_marginStart="@dimen/multiplier_17dp"
+        >
+        <TextView
+            android:id="@+id/name_es"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Default Spanish Name"
+            android:textSize="@dimen/multiplier_17dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Original english name"
+            android:textSize="@dimen/multiplier_8dp"
+            android:textColor="@color/grey_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_es"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" (titulo original)"
+            android:textSize="@dimen/multiplier_8dp"
+            android:textColor="@color/grey_default"
+            app:layout_constraintBottom_toBottomOf="@+id/name"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/previewImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/batman_preview"
+        app:layout_constraintTop_toBottomOf="@id/info"
         />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/movieThumbnailImage"
+        android:layout_width="@dimen/multiplier_45dp"
+        android:layout_height="@dimen/multiplier_65dp"
+        android:layout_marginTop="@dimen/multiplier_6dp"
+        android:layout_marginStart="@dimen/multiplier_15dp"
+        app:layout_constraintTop_toBottomOf="@id/previewImage"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="@dimen/multiplier_35"
+        android:layout_height="@dimen/multiplier_20dp"
+        android:layout_marginStart="@dimen/multiplier_6dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/grey_default"
+        android:textAllCaps="false"
+        android:text="Drama"
+        android:textSize="12sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        app:layout_constraintStart_toEndOf="@id/movieThumbnailImage"
+        app:layout_constraintTop_toTopOf="@id/movieThumbnailImage" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="@dimen/multiplier_12dp"
+        android:layout_height="@dimen/multiplier_12dp"
+        android:src="@drawable/ic_baseline_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        android:layout_marginStart="@dimen/multiplier_6dp"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5.0"
+        android:layout_marginStart="@dimen/multiplier_2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/synopsis"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/multiplier_6dp"
+        android:layout_marginEnd="@dimen/multiplier_15dp"
+        android:text="Default Synopsis text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/multiplier_8sp"
+        android:ellipsize="end"
+        android:maxLines="4"
+
+        app:layout_constraintBottom_toBottomOf="@id/movieThumbnailImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/movieThumbnailImage"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/multiplier_15dp"
+        android:layout_marginTop="@dimen/multiplier_15dp"
+        android:text="Guía de Episodios"
+        android:textColor="@color/black"
+        android:textSize="@dimen/multiplier_8sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieThumbnailImage" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/multiplier_12dp"
+        android:backgroundTint="@color/yellow_brand"
+        android:paddingStart="@dimen/multiplier_7dp"
+        android:paddingEnd="@dimen/multiplier_7dp"
+        android:layout_marginBottom="@dimen/multiplier_35"
+        android:text="Agregar a mi lista de seguimiento"
+        android:textAllCaps="false"
+        android:textColor="#4b4747"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/multiplier_12dp"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        >
+        <View style="@style/Divider"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

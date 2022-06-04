@@ -39,7 +39,7 @@ class HomeFragment: Fragment() {
     }
 
     private fun showMovieDetails(movie:Movie){
-        val action = HomeFragmentDirections.actionHomeFragmentToMovieDetailsFragment(movie.name)
+        val action = HomeFragmentDirections.actionHomeFragmentToMovieDetailsFragment(name = movie.name, nameEs = movie.name_es, synopsis = movie.synopsis,preview = movie.preview,thumbnail = movie.thumbnail,shortDescription = movie.synopsis,numberEpisodes = movie.numberEpisodes)
         findNavController().navigate(action)
     }
 }

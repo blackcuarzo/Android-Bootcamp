@@ -13,4 +13,5 @@
     <color name="login_button_text">#cecece</color>
     <color name="toolbar_color_control_normal">#FFFFFFFF</color>
     <color name="colorPrimary">@color/yellow_brand</color>
+    <color name="grey_default">#ababab</color>
 </resources>

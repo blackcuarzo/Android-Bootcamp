@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -32,7 +33,13 @@ class MovieDetailsFragment: Fragment() {
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
         toolbar.setupWithNavController(navController)
 
-        view.findViewById<TextView>(R.id.movieName).text = args.name
+        view.findViewById<Toolbar>(R.id.toolbar).title = args.name
+        view.findViewById<TextView>(R.id.name_es).text = args.nameEs
+        view.findViewById<TextView>(R.id.name).text = args.name
+        view.findViewById<ImageView>(R.id.previewImage).setImageResource(args.preview)
+        view.findViewById<ImageView>(R.id.movieThumbnailImage).setImageResource(args.thumbnail)
+        view.findViewById<TextView>(R.id.synopsis).text = args.synopsis
+
 
         return view
     }
