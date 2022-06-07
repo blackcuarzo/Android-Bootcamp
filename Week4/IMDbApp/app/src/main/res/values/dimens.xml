@@ -5,7 +5,7 @@
     <dimen name="multiplier_9sp">18sp</dimen>
     <dimen name="multiplier_26dp">52dp</dimen>
     <dimen name="multiplier_17dp">34dp</dimen>
-    <dimen name="multiplier_35">70dp</dimen>
+    <dimen name="multiplier_35dp">70dp</dimen>
     <dimen name="multiplier_7dp">14dp</dimen>
     <dimen name="multiplier_9dp">18dp</dimen>
     <dimen name="multiplier_20dp">40dp</dimen>
@@ -21,5 +21,9 @@
     <dimen name="multiplier_8sp">16sp</dimen>
     <dimen name="multiplier_24dp">48dp</dimen>
     <dimen name="multiplier_2dp">4dp</dimen>
+    <dimen name="multiplier_14dp">28dp</dimen>
+    <dimen name="multiplier_77dp">154dp</dimen>
+    <dimen name="multiplier_5sp">10sp</dimen>
+    <dimen name="multiplier_18dp">36dp</dimen>
 
 </resources>
