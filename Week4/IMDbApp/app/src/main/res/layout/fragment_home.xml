@@ -56,14 +56,11 @@
                     android:layout_width="125dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="@dimen/multiplier_12dp"
-
                     android:layout_marginBottom="@dimen/multiplier_12dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/stranger_things_thumbnail"
-
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-
                     app:layout_constraintTop_toTopOf="@id/guideline_half" />
 
                 <TextView
