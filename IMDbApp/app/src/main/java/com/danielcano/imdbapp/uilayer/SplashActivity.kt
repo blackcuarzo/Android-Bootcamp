@@ -1,8 +1,9 @@
-package com.danielcano.imdbapp
+package com.danielcano.imdbapp.uilayer
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.danielcano.imdbapp.R
 import java.util.*
 import kotlin.concurrent.timerTask
 
@@ -11,9 +12,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        val accessIntent = Intent(this,UserAccessActivity::class.java)
+        val accessIntent = Intent(this, UserAccessActivity::class.java)
         Timer().schedule(timerTask { startActivity(accessIntent) },300)
-
     }
-
 }

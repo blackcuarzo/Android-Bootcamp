@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menu.HomeFragment"
+    tools:context=".uilayer.menu.HomeFragment"
     >
 
     <com.google.android.material.appbar.AppBarLayout
@@ -34,7 +34,7 @@
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/strangerthings_preview"
-
+                    android:contentDescription="@string/movie_scene_description"
                     app:layout_constraintBottom_toBottomOf="@id/guideline_two_thirds"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -44,12 +44,14 @@
                     android:id="@+id/imageView3"
                     android:layout_width="@dimen/multiplier_34dp"
                     android:layout_height="@dimen/multiplier_34dp"
+                    app:tint="@color/white"
                     android:src="@drawable/ic_baseline_play_circle_outline_24"
+                    android:contentDescription="@string/play_logo_description"
                     app:layout_constraintBottom_toBottomOf="@+id/previewImage"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/previewImage"
                     app:layout_constraintTop_toTopOf="@+id/previewImage"
-                    app:tint="@color/white" />
+                    />
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -59,6 +61,7 @@
                     android:layout_marginBottom="@dimen/multiplier_12dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/stranger_things_thumbnail"
+                    android:contentDescription="@string/thumbnail_image_description"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/guideline_half" />
@@ -69,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/multiplier_6dp"
                     android:layout_marginStart="@dimen/multiplier_8dp"
-                    android:text="Stranger Things"
+                    android:text="@string/recommended_movie_series_title"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -82,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:layout_marginTop="4dp"
-                    android:text="Trailer Oficial"
+                    android:text="@string/preview_content_details"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/textView"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -132,11 +135,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="@dimen/multiplier_12dp"
                 android:layout_margin="@dimen/multiplier_8dp"
+                android:textStyle="bold"
+                android:textSize="@dimen/multiplier_12sp"
                 android:textColor="@color/black"
-                android:text="Las mejores selecciones"
+                android:text="@string/recycler_view_title"
                 />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -150,32 +153,21 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/strangerthings_preview">
-            </ImageView>
+                android:src="@drawable/strangerthings_preview"
+                android:contentDescription="@string/movie_scene_description"
+                />
 
             <View style="@style/Divider"/>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/strangerthings_preview">
-            </ImageView>
+                android:src="@drawable/strangerthings_preview"
+                android:contentDescription="@string/movie_scene_description"
+                />
 
             <View style="@style/Divider"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/strangerthings_preview">
-            </ImageView>
-
-            <View style="@style/Divider"/>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/strangerthings_preview">
-            </ImageView>
         </LinearLayout>
 
 

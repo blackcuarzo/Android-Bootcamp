@@ -1,12 +1,11 @@
-package com.danielcano.imdbapp
+package com.danielcano.imdbapp.uilayer
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.datalayer.Movie
 
 class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val nameText = itemView.findViewById<TextView>(R.id.movieNameText)
@@ -17,7 +16,7 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     fun bind(movie: Movie){
         nameText.text = movie.name
         actorsText.text = movie.actors
-        yearText.text = movie.year.toString()
+        yearText.text = movie.year
         thumbnailImage.setImageResource(movie.thumbnail)
     }
 }

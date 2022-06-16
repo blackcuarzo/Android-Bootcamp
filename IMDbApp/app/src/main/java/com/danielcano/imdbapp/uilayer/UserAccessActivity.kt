@@ -1,13 +1,12 @@
-package com.danielcano.imdbapp
+package com.danielcano.imdbapp.uilayer
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import com.danielcano.imdbapp.access.LoginFragmentDirections
-import com.danielcano.imdbapp.access.RegistrationFragmentDirections
+import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.uilayer.access.LoginFragmentDirections
+import com.danielcano.imdbapp.uilayer.access.RegistrationFragmentDirections
 
 class UserAccessActivity : AppCompatActivity(), AccessNavigator {
     override fun onCreate(savedInstanceState: Bundle?) {

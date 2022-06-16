@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity"
+    tools:context=".uilayer.SplashActivity"
     android:orientation="vertical"
     android:gravity="center"
 
@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/logo_size"
         android:src="@drawable/ic_imdb_logo_2016"
+        android:contentDescription="@string/imdb_logo_description"
         android:layout_gravity="center"
         />
 

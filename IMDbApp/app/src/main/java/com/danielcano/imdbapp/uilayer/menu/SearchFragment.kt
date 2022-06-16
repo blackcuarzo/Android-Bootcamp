@@ -1,4 +1,4 @@
-package com.danielcano.imdbapp.menu
+package com.danielcano.imdbapp.uilayer.menu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danielcano.imdbapp.Movie
-import com.danielcano.imdbapp.MovieListAdapter
+import com.danielcano.imdbapp.datalayer.Movie
+import com.danielcano.imdbapp.uilayer.MovieListAdapter
 import com.danielcano.imdbapp.R
-import com.danielcano.imdbapp.movies
+import com.danielcano.imdbapp.datalayer.movies
 
 class SearchFragment : Fragment() {
 
@@ -21,7 +21,7 @@ class SearchFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_search, container, false)
-//
+
 //        //Code goes here
         val movieList: RecyclerView = view.findViewById(R.id.movieList)
 

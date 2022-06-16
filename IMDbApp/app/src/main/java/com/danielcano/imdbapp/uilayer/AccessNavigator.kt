@@ -1,4 +1,4 @@
-package com.danielcano.imdbapp
+package com.danielcano.imdbapp.uilayer
 
 import android.view.View
 

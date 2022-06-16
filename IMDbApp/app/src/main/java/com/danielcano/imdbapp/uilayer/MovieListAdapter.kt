@@ -1,12 +1,15 @@
-package com.danielcano.imdbapp
+package com.danielcano.imdbapp.uilayer
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import java.util.logging.Handler
+import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.datalayer.Movie
 
-class MovieListAdapter (private val clickHandler: (Movie) -> Unit) : ListAdapter<Movie,MovieViewHolder>(MovieDiffCallback) {
+class MovieListAdapter (private val clickHandler: (Movie) -> Unit) : ListAdapter<Movie, MovieViewHolder>(
+    MovieDiffCallback
+) {
     object MovieDiffCallback:DiffUtil.ItemCallback<Movie>() {
         override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
             return oldItem === newItem

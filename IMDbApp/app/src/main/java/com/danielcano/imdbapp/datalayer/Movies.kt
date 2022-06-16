@@ -1,6 +1,7 @@
-package com.danielcano.imdbapp
+package com.danielcano.imdbapp.datalayer
 
 import android.content.res.Resources
+import com.danielcano.imdbapp.R
 
 fun movies (resources: Resources): List<Movie> {
     return listOf(
@@ -27,7 +28,7 @@ fun movies (resources: Resources): List<Movie> {
             category = "Miniserie de TV",
             numberEpisodes = 7,
             preview = R.drawable.queengambit_preview
-        ),Movie(
+        ), Movie(
             name = resources.getString(R.string.movie7_name),
             name_es = resources.getString(R.string.movie7_name),
             year = "2016 - 2022",
@@ -38,7 +39,7 @@ fun movies (resources: Resources): List<Movie> {
             category = "Movie",
             numberEpisodes = 9,
             preview = R.drawable.strangerthings_preview
-        ),Movie(
+        ), Movie(
             name = resources.getString(R.string.movie2_name),
             name_es = "MadMax: Furia en la carretera",
             year = "2015",
@@ -86,6 +87,5 @@ fun movies (resources: Resources): List<Movie> {
             numberEpisodes = 1,
             preview = R.drawable.spiderman_preview
         )
-
     )
 }

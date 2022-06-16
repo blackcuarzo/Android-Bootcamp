@@ -1,4 +1,4 @@
-package com.danielcano.imdbapp.access
+package com.danielcano.imdbapp.uilayer.access
 
 import android.content.Context
 import android.os.Bundle
@@ -8,13 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.danielcano.imdbapp.AccessNavigator
+import com.danielcano.imdbapp.uilayer.AccessNavigator
 import com.danielcano.imdbapp.R
 
-// In the constructor we set a parameter onRegistrationListener of type anonymous function with Unit(void) return
 class LoginFragment: Fragment() {
 
-    private lateinit var navigator:AccessNavigator
+    private lateinit var navigator: AccessNavigator
     override fun onAttach(context: Context) {
         super.onAttach(context)
         navigator = context as AccessNavigator
@@ -29,7 +28,6 @@ class LoginFragment: Fragment() {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
         // Code goes here
-
         val guestLink = view.findViewById<TextView>(R.id.guest_link)
         guestLink.setOnClickListener {
 

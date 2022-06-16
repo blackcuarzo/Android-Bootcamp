@@ -1,4 +1,4 @@
-package com.danielcano.imdbapp.access
+package com.danielcano.imdbapp.uilayer.access
 
 import android.content.Context
 import android.os.Bundle
@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.danielcano.imdbapp.AccessNavigator
+import com.danielcano.imdbapp.uilayer.AccessNavigator
 import com.danielcano.imdbapp.R
 
 class RegistrationFragment : Fragment() {
@@ -38,6 +38,7 @@ class RegistrationFragment : Fragment() {
         registrationLink.setOnClickListener{
             navigator.navigateToMenu()
         }
+
         return view
     }
 }

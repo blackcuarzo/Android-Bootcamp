@@ -1,21 +1,17 @@
-package com.danielcano.imdbapp.menu
+package com.danielcano.imdbapp.uilayer.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danielcano.imdbapp.Movie
-import com.danielcano.imdbapp.MovieListAdapter
+import com.danielcano.imdbapp.datalayer.Movie
+import com.danielcano.imdbapp.uilayer.MovieListAdapter
 import com.danielcano.imdbapp.R
-import com.danielcano.imdbapp.movies
+import com.danielcano.imdbapp.datalayer.movies
 
 class HomeFragment: Fragment() {
     override fun onCreateView(
@@ -26,7 +22,6 @@ class HomeFragment: Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val movieList: RecyclerView = view.findViewById(R.id.recomendationList)
-
         movieList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
 
         val movieListAdapter = MovieListAdapter(::showMovieDetails)
@@ -38,7 +33,7 @@ class HomeFragment: Fragment() {
         return view
     }
 
-    private fun showMovieDetails(movie:Movie){
+    private fun showMovieDetails(movie: Movie){
         val action = HomeFragmentDirections.actionHomeFragmentToMovieDetailsFragment(name = movie.name, nameEs = movie.name_es, synopsis = movie.synopsis,preview = movie.preview,thumbnail = movie.thumbnail,shortDescription = movie.synopsis,numberEpisodes = movie.numberEpisodes)
         findNavController().navigate(action)
     }

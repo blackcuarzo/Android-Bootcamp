@@ -1,4 +1,4 @@
-package com.danielcano.imdbapp
+package com.danielcano.imdbapp.datalayer
 
 data class Movie (
     val name: String,
