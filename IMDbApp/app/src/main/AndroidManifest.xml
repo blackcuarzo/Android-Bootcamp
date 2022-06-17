@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IMDbApp">
         <activity
-            android:name=".uilayer.MenuActivity"
+            android:name=".uilayer.uielements.menu.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".uilayer.UserAccessActivity"
+            android:name=".uilayer.uielements.access.UserAccessActivity"
             android:exported="false" />
         <activity
-            android:name=".uilayer.SplashActivity"
+            android:name=".uilayer.uielements.access.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.danielcano.imdbapp.uilayer
+package com.danielcano.imdbapp.uilayer.uielements.menu
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
