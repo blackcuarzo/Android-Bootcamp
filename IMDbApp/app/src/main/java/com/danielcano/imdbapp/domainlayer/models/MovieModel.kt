@@ -1,6 +1,6 @@
-package com.danielcano.imdbapp.datalayer
+package com.danielcano.imdbapp.domainlayer.models
 
-data class Movie (
+data class MovieModel (
     val name: String,
     val name_es:String,
     val year: String,

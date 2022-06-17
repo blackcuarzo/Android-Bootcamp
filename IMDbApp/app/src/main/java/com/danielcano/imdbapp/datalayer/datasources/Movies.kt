@@ -2,10 +2,11 @@ package com.danielcano.imdbapp.datalayer
 
 import android.content.res.Resources
 import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.datalayer.datasources.MovieData
 
-fun movies (resources: Resources): List<Movie> {
+fun requestMoviesSource (resources: Resources): List<MovieData> {
     return listOf(
-        Movie(
+        MovieData(
             name = resources.getString(R.string.movie1_name),
             name_es = "Duna",
             year = "2022",
@@ -17,7 +18,7 @@ fun movies (resources: Resources): List<Movie> {
             numberEpisodes = 1,
             preview = R.drawable.dune_preview
         ),
-        Movie(
+        MovieData(
             name = resources.getString(R.string.movie6_name),
             name_es = "Gámbito de dama",
             year = "2020 - 2020 16",
@@ -28,7 +29,7 @@ fun movies (resources: Resources): List<Movie> {
             category = "Miniserie de TV",
             numberEpisodes = 7,
             preview = R.drawable.queengambit_preview
-        ), Movie(
+        ), MovieData(
             name = resources.getString(R.string.movie7_name),
             name_es = resources.getString(R.string.movie7_name),
             year = "2016 - 2022",
@@ -39,7 +40,7 @@ fun movies (resources: Resources): List<Movie> {
             category = "Movie",
             numberEpisodes = 9,
             preview = R.drawable.strangerthings_preview
-        ), Movie(
+        ), MovieData(
             name = resources.getString(R.string.movie2_name),
             name_es = "MadMax: Furia en la carretera",
             year = "2015",
@@ -51,7 +52,7 @@ fun movies (resources: Resources): List<Movie> {
             numberEpisodes = 1,
             preview = R.drawable.madmax_preview
         ),
-        Movie(
+        MovieData(
             name = resources.getString(R.string.movie3_name),
             name_es = "El batman",
             year = "2022",
@@ -63,7 +64,7 @@ fun movies (resources: Resources): List<Movie> {
             numberEpisodes = 1,
             preview = R.drawable.batman_preview
         ),
-        Movie(
+        MovieData(
             name = resources.getString(R.string.movie4_name),
             name_es = resources.getString(R.string.movie4_name),
             year = "2016",
@@ -75,7 +76,7 @@ fun movies (resources: Resources): List<Movie> {
             numberEpisodes = 1,
             preview = R.drawable.deadpool_preview
         ),
-        Movie(
+        MovieData(
             name = resources.getString(R.string.movie5_name),
             name_es = "Spider-Man: sin camino a casa",
             year = "2021",

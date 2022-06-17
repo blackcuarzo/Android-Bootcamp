@@ -5,16 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.danielcano.imdbapp.R
-import com.danielcano.imdbapp.datalayer.Movie
+import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
-class MovieListAdapter (private val clickHandler: (Movie) -> Unit) : ListAdapter<Movie, MovieViewHolder>(
+class MovieListAdapter (private val clickHandler: (MovieModel) -> Unit) : ListAdapter<MovieModel, MovieViewHolder>(
     MovieDiffCallback
 ) {
-    object MovieDiffCallback:DiffUtil.ItemCallback<Movie>() {
-        override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+    object MovieDiffCallback:DiffUtil.ItemCallback<MovieModel>() {
+        override fun areItemsTheSame(oldItem: MovieModel, newItem: MovieModel): Boolean {
             return oldItem === newItem
         }
-        override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+        override fun areContentsTheSame(oldItem: MovieModel, newItem: MovieModel): Boolean {
             return oldItem == newItem
             // alternative would be return oldItem.id == oldItem.id, which might be more efficient for big objects
         }
