@@ -1,24 +1,20 @@
-package com.danielcano.imdbapp.uilayer.menu
+package com.danielcano.imdbapp.uilayer.uielements.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danielcano.imdbapp.uilayer.MovieListAdapter
 import com.danielcano.imdbapp.R
-import com.danielcano.imdbapp.datalayer.datasources.MoviesLocalDataSourceImpl
-import com.danielcano.imdbapp.datalayer.repositories.MoviesRepositoryImpl
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
-import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICase
-import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICaseImpl
+import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
 
 class HomeFragment: Fragment() {
-
-//    private val moviesRepository = MoviesRepository(MoviesLocalDataSource(this.resources))
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,17 +28,12 @@ class HomeFragment: Fragment() {
         val movieListAdapter = MovieListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
 
-//        val itemList = movies(this.resources)
-        val repositoryImpl = MoviesRepositoryImpl(MoviesLocalDataSourceImpl(this.resources))
-        val itemList = GetMoviesForUICaseImpl(repositoryImpl).getMovies()
-        movieListAdapter.submitList(itemList)
-//        val moviesObserver = Observer<List<MovieModel>>{
-//            movieItem -> movieListAdapter.submitList(movieItem)
-//        }
-//
-//        moviesRepository.movieList.observe(viewLifecycleOwner,moviesObserver)
-//        moviesRepository.getMovies()
-
+        val moviesObserver = Observer<List<MovieModel>>{
+                movieItem -> movieListAdapter.submitList(movieItem)
+        }
+        val moviesViewModel = MoviesViewModel()
+        moviesViewModel.movieList.observe(viewLifecycleOwner,moviesObserver)
+        moviesViewModel.loadMovies()
         return view
     }
 

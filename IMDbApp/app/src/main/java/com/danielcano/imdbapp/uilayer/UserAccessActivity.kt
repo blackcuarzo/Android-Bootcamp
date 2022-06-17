@@ -5,8 +5,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.danielcano.imdbapp.R
-import com.danielcano.imdbapp.uilayer.access.LoginFragmentDirections
-import com.danielcano.imdbapp.uilayer.access.RegistrationFragmentDirections
+import com.danielcano.imdbapp.uilayer.uielements.access.LoginFragmentDirections
+import com.danielcano.imdbapp.uilayer.uielements.access.RegistrationFragmentDirections
 
 class UserAccessActivity : AppCompatActivity(), AccessNavigator {
     override fun onCreate(savedInstanceState: Bundle?) {

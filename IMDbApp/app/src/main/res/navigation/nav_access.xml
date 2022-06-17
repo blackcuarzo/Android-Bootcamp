@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.danielcano.imdbapp.uilayer.access.LoginFragment"
+        android:name="com.danielcano.imdbapp.uilayer.uielements.access.LoginFragment"
         android:label="@null"
         tools:layout="@layout/fragment_login" >
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.danielcano.imdbapp.uilayer.access.RegistrationFragment"
+        android:name="com.danielcano.imdbapp.uilayer.uielements.access.RegistrationFragment"
         android:label="@null"
         tools:layout="@layout/fragment_registration" >
         <action

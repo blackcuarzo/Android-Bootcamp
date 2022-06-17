@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.danielcano.imdbapp.uilayer.menu.SearchFragment"
+        android:name="com.danielcano.imdbapp.uilayer.uielements.menu.SearchFragment"
         android:label="@null"
         tools:layout="@layout/fragment_search" >
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.danielcano.imdbapp.uilayer.menu.HomeFragment"
+        android:name="com.danielcano.imdbapp.uilayer.uielements.menu.HomeFragment"
         android:label="@null"
         tools:layout="@layout/fragment_home"
         >
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/playFragment"
-        android:name="com.danielcano.imdbapp.uilayer.menu.PlayFragment"
+        android:name="com.danielcano.imdbapp.uilayer.uielements.menu.PlayFragment"
         android:label="fragment_play"
         tools:layout="@layout/fragment_play" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.danielcano.imdbapp.uilayer.menu.ProfileFragment"
+        android:name="com.danielcano.imdbapp.uilayer.uielements.menu.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -75,7 +75,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieDetailsFragment"
-        android:name="com.danielcano.imdbapp.uilayer.menu.MovieDetailsFragment"
+        android:name="com.danielcano.imdbapp.uilayer.uielements.menu.MovieDetailsFragment"
         android:label="fragment_movie_details"
         tools:layout="@layout/fragment_movie_details" >
         <argument

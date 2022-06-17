@@ -6,13 +6,9 @@ import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
 class MoviesRepositoryImpl (private val datasource:MoviesLocalDataSource):MoviesRepository{
 
-    private val _movieList:MutableList<MovieModel> =  mutableListOf<MovieModel>()
-    val movieList:List<MovieModel> = _movieList
-
     override fun getMovies(): List<MovieModel> {
         val moviesData= datasource.getMoviesData()
         val moviesModel = modelData(moviesData)
-//        _movieList.value = moviesModel
         return moviesModel
     }
 
@@ -36,6 +32,4 @@ class MoviesRepositoryImpl (private val datasource:MoviesLocalDataSource):Movies
         }
         return moviesProcessed
     }
-
-
 }
