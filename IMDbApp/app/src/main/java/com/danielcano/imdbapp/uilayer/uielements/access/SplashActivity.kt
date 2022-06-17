@@ -1,4 +1,4 @@
-package com.danielcano.imdbapp.uilayer
+package com.danielcano.imdbapp.uilayer.uielements.access
 
 import android.content.Intent
 import android.os.Bundle

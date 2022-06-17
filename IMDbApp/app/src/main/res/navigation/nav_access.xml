@@ -35,7 +35,7 @@
     </fragment>
     <activity
         android:id="@+id/menuActivity"
-        android:name="com.danielcano.imdbapp.uilayer.MenuActivity"
+        android:name="com.danielcano.imdbapp.uilayer.uielements.menu.MenuActivity"
         android:label="activity_menu"
         tools:layout="@layout/activity_menu"
         />

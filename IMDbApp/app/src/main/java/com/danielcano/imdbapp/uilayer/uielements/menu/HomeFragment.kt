@@ -29,7 +29,7 @@ class HomeFragment: Fragment() {
         movieList.adapter = movieListAdapter
 
         val moviesObserver = Observer<List<MovieModel>>{
-                movieItem -> movieListAdapter.submitList(movieItem)
+                movieItemsList -> movieListAdapter.submitList(movieItemsList)
         }
         val moviesViewModel = MoviesViewModel()
         moviesViewModel.movieList.observe(viewLifecycleOwner,moviesObserver)
