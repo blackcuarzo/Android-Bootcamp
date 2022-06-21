@@ -1,12 +1,12 @@
 package com.danielcano.imdbapp.datalayer.repositories
 
-import com.danielcano.imdbapp.datalayer.datasources.MoviesDataLocal
+import com.danielcano.imdbapp.datalayer.datasources.MoviesData
 import com.danielcano.imdbapp.datalayer.datasources.MovieDtoLocal
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
-class MoviesRepositoryImpl (private val datasource:MoviesDataLocal):MoviesRepository{
+class MoviesRepositoryImpl (private val datasource:MoviesData):MoviesRepository{
 
-    override fun getMovies(): List<MovieModel> {
+    override suspend fun getMovies(): List<MovieModel> {
         val moviesData= datasource.getMoviesList()
         val moviesModel = modelData(moviesData)
         return moviesModel

@@ -1,7 +1,5 @@
 package com.danielcano.imdbapp.datalayer.datasources.network
 
-import com.danielcano.imdbapp.datalayer.datasources.MovieDtoLocal
-import com.danielcano.imdbapp.datalayer.datasources.MovieDtoNetwork
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
