@@ -1,11 +1,11 @@
 package com.danielcano.imdbapp.datalayer
 
 import com.danielcano.imdbapp.R
-import com.danielcano.imdbapp.datalayer.datasources.MovieData
+import com.danielcano.imdbapp.datalayer.datasources.MovieDtoLocal
 
-fun requestMoviesSource (): List<MovieData> {
+fun requestMoviesSource (): List<MovieDtoLocal> {
     return listOf(
-        MovieData(
+        MovieDtoLocal(
             name = "Dune",
             name_es = "Duna",
             year = "2022",
@@ -17,7 +17,7 @@ fun requestMoviesSource (): List<MovieData> {
             numberEpisodes = 1,
             preview = R.drawable.dune_preview
         ),
-        MovieData(
+        MovieDtoLocal(
             name = "The Queens Gambit",
             name_es = "Gámbito de dama",
             year = "2020 - 2020 16",
@@ -28,7 +28,7 @@ fun requestMoviesSource (): List<MovieData> {
             category = "Miniserie de TV",
             numberEpisodes = 7,
             preview = R.drawable.queengambit_preview
-        ), MovieData(
+        ), MovieDtoLocal(
             name = "Stranger Things",
             name_es = "Stranger Things",
             year = "2016 - 2022",
@@ -39,7 +39,7 @@ fun requestMoviesSource (): List<MovieData> {
             category = "Movie",
             numberEpisodes = 9,
             preview = R.drawable.strangerthings_preview
-        ), MovieData(
+        ), MovieDtoLocal(
             name = "MadMax",
             name_es = "MadMax: Furia en la carretera",
             year = "2015",
@@ -51,7 +51,7 @@ fun requestMoviesSource (): List<MovieData> {
             numberEpisodes = 1,
             preview = R.drawable.madmax_preview
         ),
-        MovieData(
+        MovieDtoLocal(
             name = "Batman",
             name_es = "El batman",
             year = "2022",
@@ -63,7 +63,7 @@ fun requestMoviesSource (): List<MovieData> {
             numberEpisodes = 1,
             preview = R.drawable.batman_preview
         ),
-        MovieData(
+        MovieDtoLocal(
             name = "Deadpool",
             name_es = "Deadpool",
             year = "2016",
@@ -75,7 +75,7 @@ fun requestMoviesSource (): List<MovieData> {
             numberEpisodes = 1,
             preview = R.drawable.deadpool_preview
         ),
-        MovieData(
+        MovieDtoLocal(
             name = "Spider-Man: No Way Home",
             name_es = "Spider-Man: sin camino a casa",
             year = "2021",

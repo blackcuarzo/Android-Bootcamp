@@ -2,8 +2,8 @@ package com.danielcano.imdbapp.datalayer.datasources
 
 import com.danielcano.imdbapp.datalayer.requestMoviesSource
 
-class MoviesLocalDataSourceImpl():MoviesLocalDataSource {
-    override fun getMoviesData():List<MovieData>{
+class MoviesDataLocalImpl():MoviesDataLocal {
+    override fun getMoviesList():List<MovieDtoLocal>{
         return requestMoviesSource()
     }
 }

@@ -1,6 +1,6 @@
 package com.danielcano.imdbapp.datalayer.datasources
 
-data class MovieData (
+data class MovieDtoLocal (
     val name: String,
     val name_es:String,
     val year: String,
