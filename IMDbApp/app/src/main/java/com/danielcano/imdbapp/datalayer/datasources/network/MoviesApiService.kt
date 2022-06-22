@@ -6,11 +6,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-const val BASE_URL = "https://api.themoviedb.org/3"
+const val BASE_URL = "https://api.themoviedb.org/3/"
 const val API_KEY = "c5c47722a4adcc77f6e84f28a48b857a"
 
 interface MoviesApiService{
-    @GET("movie/top_rated?api_key=${API_KEY}&language=es")
+    @GET("movie/top_rated?api_key=${API_KEY}")
     suspend fun getMoviesList():List<MovieDtoNetwork>
 }
 

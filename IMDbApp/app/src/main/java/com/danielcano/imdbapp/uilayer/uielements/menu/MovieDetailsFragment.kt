@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.setupWithNavController
+import coil.load
 import com.danielcano.imdbapp.R
 
 class MovieDetailsFragment: Fragment() {
@@ -31,10 +32,17 @@ class MovieDetailsFragment: Fragment() {
         toolbar.title = args.name
         view.findViewById<TextView>(R.id.name_es).text = args.nameEs
         view.findViewById<TextView>(R.id.name).text = args.name
-        view.findViewById<ImageView>(R.id.previewImage).setImageResource(args.preview)
-        view.findViewById<ImageView>(R.id.movieThumbnailImage).setImageResource(args.thumbnail)
         view.findViewById<TextView>(R.id.synopsis).text = args.synopsis
+        val prevView = view.findViewById<ImageView>(R.id.previewImage)
+        prevView?.let {
+            view.findViewById<ImageView>(R.id.previewImage).load(args.preview)
+        }
 
+        val thumbView = view.findViewById<ImageView>(R.id.movieThumbnailImage)
+            .load(args.thumbnail)
+        thumbView?.let {
+            view.findViewById<ImageView>(R.id.movieThumbnailImage).load(args.thumbnail)
+        }
         return view
     }
 }

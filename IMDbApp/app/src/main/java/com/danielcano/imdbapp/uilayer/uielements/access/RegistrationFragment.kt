@@ -38,7 +38,6 @@ class RegistrationFragment : Fragment() {
         registrationLink.setOnClickListener{
             navigator.navigateToMenu()
         }
-
         return view
     }
 }

@@ -1,7 +1,5 @@
 package com.danielcano.imdbapp.datalayer.datasources.translaters
 
-import com.danielcano.imdbapp.R
-import com.danielcano.imdbapp.datalayer.datasources.MovieDtoLocal
 import com.danielcano.imdbapp.datalayer.datasources.network.MovieDtoNetwork
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
@@ -17,7 +15,7 @@ class MapperNetworkToDomainModel () {
                         name = remoteMovie.originalTitle,
                         nameEs = remoteMovie.title,
                         year = remoteMovie.releaseDate,
-                        actors = "",
+                        actors = "placeholder",
                         rating = remoteMovie.popularity,
                         thumbnail = imgUrlBase + remoteMovie.posterPath,
                         category = "Movie",

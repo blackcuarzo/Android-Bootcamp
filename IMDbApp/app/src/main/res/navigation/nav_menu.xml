@@ -89,10 +89,10 @@
             app:argType="string"/>
         <argument
             android:name="preview"
-            app:argType="integer"/>
+            app:argType="string"/>
         <argument
             android:name="thumbnail"
-            app:argType="integer"/>
+            app:argType="string"/>
         <argument
             android:name="shortDescription"
             app:argType="string"

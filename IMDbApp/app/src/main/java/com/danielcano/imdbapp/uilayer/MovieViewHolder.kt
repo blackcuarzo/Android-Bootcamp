@@ -17,6 +17,6 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         nameText.text = movie.name
         actorsText.text = movie.actors
         yearText.text = movie.year
-        thumbnailImage.setImageResource(movie.thumbnail)
+        thumbnailImage.setImageResource(R.drawable.dune_preview)
     }
 }
