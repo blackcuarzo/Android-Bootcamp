@@ -35,7 +35,6 @@ class HomeFragment: Fragment() {
             movieItemsList -> movieListAdapter.submitList(movieItemsList)
         }
         viewModel.movieList.observe(viewLifecycleOwner,moviesObserver)
-        viewModel.loadMovies()
         return view
     }
 

@@ -40,8 +40,6 @@ class SearchFragment : Fragment() {
             view.findViewById<TextView>(R.id.statusText).text = it
         }
 
-        viewModel.loadMovies()
-
         return view
     }
     private fun showMovieDetails(movie: MovieModel){
