@@ -28,7 +28,6 @@ class MovieDetailsFragment: Fragment() {
         val navController = findNavController()
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
         toolbar.setupWithNavController(navController)
-
         toolbar.title = args.name
         view.findViewById<TextView>(R.id.name_es).text = args.nameEs
         view.findViewById<TextView>(R.id.name).text = args.name
@@ -37,7 +36,6 @@ class MovieDetailsFragment: Fragment() {
         prevView?.let {
             view.findViewById<ImageView>(R.id.previewImage).load(args.preview)
         }
-
         val thumbView = view.findViewById<ImageView>(R.id.movieThumbnailImage)
             .load(args.thumbnail)
         thumbView?.let {

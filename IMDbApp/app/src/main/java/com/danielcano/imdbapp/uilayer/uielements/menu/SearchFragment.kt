@@ -25,21 +25,16 @@ class SearchFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_search, container, false)
-
-//        //Code goes here
         val movieList: RecyclerView = view.findViewById(R.id.movieList)
         movieList.layoutManager = LinearLayoutManager(requireContext())
         val movieListAdapter = MovieListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
-        val moviesObserver = Observer<List<MovieModel>>{
-                movieItemsList -> movieListAdapter.submitList(movieItemsList)
+        viewModel.movieList.observe(viewLifecycleOwner){
+            movieItemsList -> movieListAdapter.submitList(movieItemsList)
         }
-        viewModel.movieList.observe(viewLifecycleOwner,moviesObserver)
-
-        viewModel.status.observe(requireActivity()){
+        viewModel.status.observe(viewLifecycleOwner){
             view.findViewById<TextView>(R.id.statusText).text = it
         }
-
         return view
     }
     private fun showMovieDetails(movie: MovieModel){
