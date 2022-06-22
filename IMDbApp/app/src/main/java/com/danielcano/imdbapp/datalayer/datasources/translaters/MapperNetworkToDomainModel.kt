@@ -1,10 +1,10 @@
-package com.danielcano.imdbapp.datalayer.datasources.network
+package com.danielcano.imdbapp.datalayer.datasources.translaters
 
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.datalayer.datasources.MovieDtoLocal
+import com.danielcano.imdbapp.datalayer.datasources.network.MovieDtoNetwork
 
-class AdapterNetworkToLocal () {
-
+class MapperNetworkToDomainModel () {
 
     fun convertData(remoteData:List<MovieDtoNetwork>):List<MovieDtoLocal>{
         val convertedData = mutableListOf<MovieDtoLocal>()
@@ -13,7 +13,7 @@ class AdapterNetworkToLocal () {
                 remoteMovie -> convertedData.add(
                     MovieDtoLocal(
                         name = remoteMovie.originalTitle,
-                        name_es = remoteMovie.title,
+                        nameEs = remoteMovie.title,
                         year = remoteMovie.releaseDate,
                         actors = "",
                         rating = remoteMovie.popularity,

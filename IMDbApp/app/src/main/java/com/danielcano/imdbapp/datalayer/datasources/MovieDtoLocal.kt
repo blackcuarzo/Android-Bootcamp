@@ -2,7 +2,7 @@ package com.danielcano.imdbapp.datalayer.datasources
 
 data class MovieDtoLocal (
     val name: String,
-    val name_es:String,
+    val nameEs:String,
     val year: String,
     val actors: String,
     val rating:Float,

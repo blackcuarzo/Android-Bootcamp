@@ -18,7 +18,7 @@ class MoviesRepositoryImpl (private val datasource:MoviesData):MoviesRepository{
                 movieData -> moviesProcessed.add(
             MovieModel(
                 movieData.name,
-                movieData.name_es,
+                movieData.nameEs,
                 movieData.year,
                 movieData.actors,
                 movieData.rating,
