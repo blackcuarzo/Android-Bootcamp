@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
@@ -17,6 +18,6 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         nameText.text = movie.name
         actorsText.text = movie.actors
         yearText.text = movie.year
-        thumbnailImage.setImageResource(R.drawable.dune_preview)
+        thumbnailImage.load(movie.thumbnail)
     }
 }
