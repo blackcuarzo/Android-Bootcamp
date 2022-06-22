@@ -31,7 +31,7 @@ class MoviesViewModel: ViewModel() {
                 _status.value = "Successfully loaded"
             }catch (e:Exception){
                 _movieList.value = listOf<MovieModel>()
-                _status.value = "Failed to load, Error: ${e.message}"
+                _status.value = "Failed to load, Error: ${e.localizedMessage}"
             }
         }
     }
