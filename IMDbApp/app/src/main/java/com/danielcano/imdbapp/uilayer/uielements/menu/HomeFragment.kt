@@ -38,7 +38,7 @@ class HomeFragment: Fragment() {
     }
 
     private fun showMovieDetails(movie: MovieModel){
-        val action = HomeFragmentDirections.actionHomeFragmentToMovieDetailsFragment(name = movie.name, nameEs = movie.name_es, synopsis = movie.synopsis,preview = movie.preview,thumbnail = movie.thumbnail,shortDescription = movie.synopsis,numberEpisodes = movie.numberEpisodes)
+        val action = HomeFragmentDirections.actionHomeFragmentToMovieDetailsFragment(name = movie.name, nameEs = movie.nameEs, synopsis = movie.synopsis,preview = movie.preview,thumbnail = movie.thumbnail,shortDescription = movie.synopsis,numberEpisodes = movie.numberEpisodes)
         findNavController().navigate(action)
     }
 }
