@@ -9,9 +9,9 @@ import retrofit2.http.GET
 const val BASE_URL = "https://api.themoviedb.org/3/"
 const val API_KEY = "c5c47722a4adcc77f6e84f28a48b857a"
 
-interface MoviesApiService{
+interface MoviesApiService {
     @GET("movie/top_rated?api_key=${API_KEY}&language=es")
-    suspend fun getApiResponse():ImdbApiServiceResponse
+    suspend fun getApiResponse(): ImdbApiServiceResponse
 }
 
 private val moshi = Moshi.Builder()
@@ -23,8 +23,8 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-object MoviesApi{
-    val retrofitService:MoviesApiService by lazy {
+object MoviesApi {
+    val retrofitService: MoviesApiService by lazy {
         retrofit.create(MoviesApiService::class.java)
     }
 }

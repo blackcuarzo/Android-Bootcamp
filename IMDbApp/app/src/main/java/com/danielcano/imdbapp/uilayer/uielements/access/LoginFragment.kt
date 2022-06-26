@@ -11,7 +11,7 @@ import android.widget.TextView
 import com.danielcano.imdbapp.uilayer.AccessNavigator
 import com.danielcano.imdbapp.R
 
-class LoginFragment: Fragment() {
+class LoginFragment : Fragment() {
 
     private lateinit var navigator: AccessNavigator
     override fun onAttach(context: Context) {
@@ -35,11 +35,11 @@ class LoginFragment: Fragment() {
         }
 
         val registrationLink = view.findViewById<TextView>(R.id.registration_link)
-        registrationLink.setOnClickListener{
+        registrationLink.setOnClickListener {
             navigator.navigateToRegistration(it)
         }
 
-        val buttonLogin  = view.findViewById<Button>(R.id.login_button)
+        val buttonLogin = view.findViewById<Button>(R.id.login_button)
         buttonLogin.setOnClickListener {
             navigator.navigateToMenu()
         }

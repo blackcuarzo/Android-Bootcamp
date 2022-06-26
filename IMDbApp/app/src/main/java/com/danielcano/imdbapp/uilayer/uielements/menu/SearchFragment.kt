@@ -29,15 +29,16 @@ class SearchFragment : Fragment() {
         movieList.layoutManager = LinearLayoutManager(requireContext())
         val movieListAdapter = MovieListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
-        viewModel.movieList.observe(viewLifecycleOwner){
-            movieItemsList -> movieListAdapter.submitList(movieItemsList)
+        viewModel.movieList.observe(viewLifecycleOwner) { movieItemsList ->
+            movieListAdapter.submitList(movieItemsList)
         }
-        viewModel.status.observe(viewLifecycleOwner){
+        viewModel.status.observe(viewLifecycleOwner) {
             view.findViewById<TextView>(R.id.statusText).text = it
         }
         return view
     }
-    private fun showMovieDetails(movie: MovieModel){
+
+    private fun showMovieDetails(movie: MovieModel) {
         val action = SearchFragmentDirections.actionSearchFragmentToMovieDetailsFragment(
             name = movie.name,
             nameEs = movie.nameEs,
@@ -45,7 +46,8 @@ class SearchFragment : Fragment() {
             preview = movie.preview,
             thumbnail = movie.thumbnail,
             shortDescription = movie.synopsis,
-            numberEpisodes = movie.numberEpisodes)
+            numberEpisodes = movie.numberEpisodes
+        )
         findNavController().navigate(action)
     }
 }

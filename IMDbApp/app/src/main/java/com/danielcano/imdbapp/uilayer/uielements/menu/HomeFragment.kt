@@ -14,7 +14,8 @@ import com.danielcano.imdbapp.domainlayer.models.MovieModel
 import com.danielcano.imdbapp.uilayer.MovieListAdapter
 import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
 
-class HomeFragment: Fragment() {
+class HomeFragment : Fragment() {
+
     private val viewModel by viewModels<MoviesViewModel>()
 
     override fun onCreateView(
@@ -24,16 +25,17 @@ class HomeFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         val movieList: RecyclerView = view.findViewById(R.id.recomendationList)
-        movieList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+        movieList.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         val movieListAdapter = MovieListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
-        viewModel.movieList.observe(viewLifecycleOwner){
-                movieItemsList -> movieListAdapter.submitList(movieItemsList)
+        viewModel.movieList.observe(viewLifecycleOwner) { movieItemsList ->
+            movieListAdapter.submitList(movieItemsList)
         }
         return view
     }
 
-    private fun showMovieDetails(movie: MovieModel){
+    private fun showMovieDetails(movie: MovieModel) {
         val action = HomeFragmentDirections.actionHomeFragmentToMovieDetailsFragment(
             name = movie.name,
             nameEs = movie.nameEs,
@@ -41,7 +43,8 @@ class HomeFragment: Fragment() {
             preview = movie.preview,
             thumbnail = movie.thumbnail,
             shortDescription = movie.synopsis,
-            numberEpisodes = movie.numberEpisodes)
+            numberEpisodes = movie.numberEpisodes
+        )
         findNavController().navigate(action)
     }
 }

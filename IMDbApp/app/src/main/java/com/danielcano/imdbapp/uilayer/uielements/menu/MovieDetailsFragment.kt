@@ -14,7 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import coil.load
 import com.danielcano.imdbapp.R
 
-class MovieDetailsFragment: Fragment() {
+class MovieDetailsFragment : Fragment() {
 
     private val args: MovieDetailsFragmentArgs by navArgs()
 

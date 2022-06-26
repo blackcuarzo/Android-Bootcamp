@@ -16,7 +16,6 @@ class MoviesViewModel: ViewModel() {
     private val _status = MutableLiveData<String>()
     val status:LiveData<String> = _status
 
-
     val usecase =
         GetMoviesForUICaseImpl(MoviesRepositoryImpl(MoviesNetworkDataSourceImpl()))
 

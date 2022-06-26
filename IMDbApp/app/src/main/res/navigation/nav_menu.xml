@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_menu.xml"
@@ -10,7 +9,7 @@
         android:id="@+id/searchFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.SearchFragment"
         android:label="@null"
-        tools:layout="@layout/fragment_search" >
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_searchFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -28,8 +27,7 @@
         android:id="@+id/homeFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.HomeFragment"
         android:label="@null"
-        tools:layout="@layout/fragment_home"
-        >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
@@ -47,7 +45,7 @@
         android:id="@+id/playFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.PlayFragment"
         android:label="fragment_play"
-        tools:layout="@layout/fragment_play" >
+        tools:layout="@layout/fragment_play">
         <action
             android:id="@+id/action_playFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
@@ -62,7 +60,7 @@
         android:id="@+id/profileFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_playFragment"
             app:destination="@id/playFragment" />
@@ -77,29 +75,28 @@
         android:id="@+id/movieDetailsFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.MovieDetailsFragment"
         android:label="fragment_movie_details"
-        tools:layout="@layout/fragment_movie_details" >
+        tools:layout="@layout/fragment_movie_details">
         <argument
             android:name="name"
-            app:argType="string"/>
+            app:argType="string" />
         <argument
             android:name="name_es"
-            app:argType="string"/>
+            app:argType="string" />
         <argument
             android:name="synopsis"
-            app:argType="string"/>
+            app:argType="string" />
         <argument
             android:name="preview"
-            app:argType="string"/>
+            app:argType="string" />
         <argument
             android:name="thumbnail"
-            app:argType="string"/>
+            app:argType="string" />
         <argument
             android:name="shortDescription"
-            app:argType="string"
-            />
+            app:argType="string" />
         <argument
             android:name="numberEpisodes"
-            app:argType="integer"/>
+            app:argType="integer" />
         <action
             android:id="@+id/action_movieDetailsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />

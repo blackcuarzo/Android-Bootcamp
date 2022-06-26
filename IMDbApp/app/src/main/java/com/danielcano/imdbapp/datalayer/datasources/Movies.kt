@@ -3,7 +3,7 @@ package com.danielcano.imdbapp.datalayer
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.datalayer.datasources.MovieDtoLocal
 
-fun requestMoviesSource (): List<MovieDtoLocal> {
+fun requestMoviesSource(): List<MovieDtoLocal> {
     return listOf(
         MovieDtoLocal(
             name = "Dune",

@@ -13,7 +13,7 @@ class UserAccessActivity : AppCompatActivity(), AccessNavigator {
         setContentView(R.layout.activity_user_access)
     }
 
-    override fun navigateToRegistration(view:View) {
+    override fun navigateToRegistration(view: View) {
         val action = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
         view.findNavController().navigate(action)
     }

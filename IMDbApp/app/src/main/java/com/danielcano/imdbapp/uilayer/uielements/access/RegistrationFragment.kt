@@ -35,7 +35,7 @@ class RegistrationFragment : Fragment() {
         toolbar.setupWithNavController(navController)
 
         val registrationLink = view.findViewById<TextView>(R.id.confirmationButton)
-        registrationLink.setOnClickListener{
+        registrationLink.setOnClickListener {
             navigator.navigateToMenu()
         }
         return view
