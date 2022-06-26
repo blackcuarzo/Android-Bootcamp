@@ -1,6 +1,6 @@
 package com.danielcano.imdbapp.datalayer.datasources.network
 
-data class ImdbNetworkResponse(
+data class ImdbApiServiceResponse(
     val results:List<MovieDtoNetwork>
 )
 

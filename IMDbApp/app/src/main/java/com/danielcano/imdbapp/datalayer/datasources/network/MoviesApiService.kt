@@ -11,7 +11,7 @@ const val API_KEY = "c5c47722a4adcc77f6e84f28a48b857a"
 
 interface MoviesApiService{
     @GET("movie/top_rated?api_key=${API_KEY}&language=es")
-    suspend fun getMoviesList():ImdbNetworkResponse
+    suspend fun getApiResponse():ImdbApiServiceResponse
 }
 
 private val moshi = Moshi.Builder()

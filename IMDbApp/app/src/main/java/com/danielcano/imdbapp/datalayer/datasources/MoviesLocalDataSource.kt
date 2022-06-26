@@ -1,5 +1,5 @@
 package com.danielcano.imdbapp.datalayer.datasources
 
-interface MoviesDataLocal {
+interface MoviesLocalDataSource {
     suspend fun getMoviesList():List<MovieDtoLocal>
 }

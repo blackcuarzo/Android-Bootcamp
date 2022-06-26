@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.danielcano.imdbapp.datalayer.datasources.network.MovieDataNetworkImpl
+import com.danielcano.imdbapp.datalayer.datasources.network.MoviesNetworkDataSourceImpl
 import com.danielcano.imdbapp.datalayer.repositories.MoviesRepositoryImpl
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICaseImpl
@@ -18,7 +18,7 @@ class MoviesViewModel: ViewModel() {
 
 
     val usecase =
-        GetMoviesForUICaseImpl(MoviesRepositoryImpl(MovieDataNetworkImpl()))
+        GetMoviesForUICaseImpl(MoviesRepositoryImpl(MoviesNetworkDataSourceImpl()))
 
     init {
         loadMovies()
