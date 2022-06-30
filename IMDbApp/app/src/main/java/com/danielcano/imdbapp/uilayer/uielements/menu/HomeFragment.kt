@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.databinding.FragmentHomeBinding
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 import com.danielcano.imdbapp.uilayer.MovieListAdapter
 import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
@@ -17,14 +18,17 @@ import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
 class HomeFragment : Fragment() {
 
     private val viewModel by viewModels<MoviesViewModel>()
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-        val movieList: RecyclerView = view.findViewById(R.id.recomendationList)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
+        val movieList: RecyclerView = binding.recomendationList
         movieList.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         val movieListAdapter = MovieListAdapter(::showMovieDetails)

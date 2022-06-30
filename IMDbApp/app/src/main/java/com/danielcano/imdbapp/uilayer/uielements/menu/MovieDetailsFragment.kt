@@ -13,34 +13,30 @@ import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.setupWithNavController
 import coil.load
 import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.databinding.FragmentMovieDetailsBinding
 
 class MovieDetailsFragment : Fragment() {
-
     private val args: MovieDetailsFragmentArgs by navArgs()
+    private var _binding:FragmentMovieDetailsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_movie_details, container, false)
-
+        _binding = FragmentMovieDetailsBinding.inflate(inflater,container,false)
+        val view = binding.root
         val navController = findNavController()
-        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
+        val toolbar = binding.toolbar
         toolbar.setupWithNavController(navController)
         toolbar.title = args.name
-        view.findViewById<TextView>(R.id.name_es).text = args.nameEs
-        view.findViewById<TextView>(R.id.name).text = args.name
-        view.findViewById<TextView>(R.id.synopsis).text = args.synopsis
-        val prevView = view.findViewById<ImageView>(R.id.previewImage)
-        prevView?.let {
-            view.findViewById<ImageView>(R.id.previewImage).load(args.preview)
-        }
-        val thumbView = view.findViewById<ImageView>(R.id.movieThumbnailImage)
-            .load(args.thumbnail)
-        thumbView?.let {
-            view.findViewById<ImageView>(R.id.movieThumbnailImage).load(args.thumbnail)
-        }
+        binding.nameEs.text = args.nameEs
+        binding.name.text = args.name
+        binding.synopsis.text = args.synopsis
+        binding.previewImage.load(args.preview)
+        binding.movieThumbnailImage.load(args.thumbnail)
+        binding.movieThumbnailImage.load(args.thumbnail)
         return view
     }
 }

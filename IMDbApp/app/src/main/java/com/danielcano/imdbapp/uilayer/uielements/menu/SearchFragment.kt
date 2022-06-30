@@ -13,19 +13,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danielcano.imdbapp.uilayer.MovieListAdapter
 import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.databinding.FragmentSearchBinding
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
 
 class SearchFragment : Fragment() {
     private val viewModel by viewModels<MoviesViewModel>()
+    private var _binding:FragmentSearchBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_search, container, false)
-        val movieList: RecyclerView = view.findViewById(R.id.movieList)
+        _binding = FragmentSearchBinding.inflate(inflater,container,false)
+        val view = binding.root
+        val movieList: RecyclerView = binding.movieList
         movieList.layoutManager = LinearLayoutManager(requireContext())
         val movieListAdapter = MovieListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
@@ -33,7 +36,7 @@ class SearchFragment : Fragment() {
             movieListAdapter.submitList(movieItemsList)
         }
         viewModel.status.observe(viewLifecycleOwner) {
-            view.findViewById<TextView>(R.id.statusText).text = it
+            binding.statusText.text = it
         }
         return view
     }
