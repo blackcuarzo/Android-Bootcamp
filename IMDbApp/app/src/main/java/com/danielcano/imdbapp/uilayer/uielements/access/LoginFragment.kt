@@ -10,10 +10,13 @@ import android.widget.Button
 import android.widget.TextView
 import com.danielcano.imdbapp.uilayer.AccessNavigator
 import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
-
     private lateinit var navigator: AccessNavigator
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         navigator = context as AccessNavigator
@@ -24,22 +27,22 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater,container,false)
+        val view = binding.root
 
         // Code goes here
-        val guestLink = view.findViewById<TextView>(R.id.guest_link)
+        val guestLink = binding.guestLink
         guestLink.setOnClickListener {
 
             navigator.navigateToRegistration(it)
         }
 
-        val registrationLink = view.findViewById<TextView>(R.id.registration_link)
+        val registrationLink = binding.registrationLink
         registrationLink.setOnClickListener {
             navigator.navigateToRegistration(it)
         }
 
-        val buttonLogin = view.findViewById<Button>(R.id.login_button)
+        val buttonLogin = binding.loginButton
         buttonLogin.setOnClickListener {
             navigator.navigateToMenu()
         }

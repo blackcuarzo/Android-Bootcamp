@@ -12,10 +12,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.danielcano.imdbapp.uilayer.AccessNavigator
 import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.databinding.FragmentRegistrationBinding
 
 class RegistrationFragment : Fragment() {
-
     private lateinit var navigator: AccessNavigator
+    private var _binding: FragmentRegistrationBinding? = null
+    private val binding get() = _binding!!
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         navigator = context as AccessNavigator
@@ -26,15 +29,15 @@ class RegistrationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_registration, container, false)
+        _binding = FragmentRegistrationBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        //Code goes here
         //Toolbar set up
         val navController = findNavController()
-        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
+        val toolbar = binding.toolbar
         toolbar.setupWithNavController(navController)
 
-        val registrationLink = view.findViewById<TextView>(R.id.confirmationButton)
+        val registrationLink = binding.confirmationButton
         registrationLink.setOnClickListener {
             navigator.navigateToMenu()
         }
