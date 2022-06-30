@@ -5,14 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danielcano.imdbapp.uilayer.MovieListAdapter
-import com.danielcano.imdbapp.R
+import com.danielcano.imdbapp.uilayer.adapters.MovieSearchListAdapter
 import com.danielcano.imdbapp.databinding.FragmentSearchBinding
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
@@ -30,7 +27,7 @@ class SearchFragment : Fragment() {
         val view = binding.root
         val movieList: RecyclerView = binding.movieList
         movieList.layoutManager = LinearLayoutManager(requireContext())
-        val movieListAdapter = MovieListAdapter(::showMovieDetails)
+        val movieListAdapter = MovieSearchListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
         viewModel.movieList.observe(viewLifecycleOwner) { movieItemsList ->
             movieListAdapter.submitList(movieItemsList)

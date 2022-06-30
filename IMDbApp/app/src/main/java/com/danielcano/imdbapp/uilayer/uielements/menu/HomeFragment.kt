@@ -9,10 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.databinding.FragmentHomeBinding
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
-import com.danielcano.imdbapp.uilayer.MovieListAdapter
+import com.danielcano.imdbapp.uilayer.adapters.MovieRecomendationListAdapter
 import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
 
 class HomeFragment : Fragment() {
@@ -31,7 +30,7 @@ class HomeFragment : Fragment() {
         val movieList: RecyclerView = binding.recomendationList
         movieList.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        val movieListAdapter = MovieListAdapter(::showMovieDetails)
+        val movieListAdapter = MovieRecomendationListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
         viewModel.movieList.observe(viewLifecycleOwner) { movieItemsList ->
             movieListAdapter.submitList(movieItemsList)

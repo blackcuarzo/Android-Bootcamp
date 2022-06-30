@@ -1,4 +1,4 @@
-package com.danielcano.imdbapp.uilayer
+package com.danielcano.imdbapp.uilayer.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.ListAdapter
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
-class MovieListAdapter(private val clickHandler: (MovieModel) -> Unit) :
-    ListAdapter<MovieModel, MovieViewHolder>(
+class MovieRecomendationListAdapter(private val clickHandler: (MovieModel) -> Unit) :
+    ListAdapter<MovieModel, MovieRecomendationViewHolder>(
         MovieDiffCallback
     ) {
     object MovieDiffCallback : DiffUtil.ItemCallback<MovieModel>() {
@@ -22,13 +22,13 @@ class MovieListAdapter(private val clickHandler: (MovieModel) -> Unit) :
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieRecomendationViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
-        return MovieViewHolder(itemView)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_recomendation_movie, parent, false)
+        return MovieRecomendationViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieRecomendationViewHolder, position: Int) {
         val movie = getItem(position)
         holder.bind(movie)
         holder.itemView.setOnClickListener {
