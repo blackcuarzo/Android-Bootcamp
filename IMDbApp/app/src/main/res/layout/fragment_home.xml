@@ -32,7 +32,7 @@
                     android:contentDescription="@string/movie_scene_description"
                     android:scaleType="centerCrop"
                     android:src="@drawable/strangerthings_preview"
-                    app:layout_constraintBottom_toBottomOf="@id/guideline_two_thirds"
+                    app:layout_constraintBottom_toBottomOf="@id/guideline_70"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -87,7 +87,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline_two_thirds"
+                    android:id="@+id/guideline_70"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -135,6 +135,7 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginStart="@dimen/multiplier_12dp"
                 android:id="@+id/recomendationList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

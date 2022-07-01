@@ -11,8 +11,6 @@ class MovieRecomendationViewHolder(itemView: View) : RecyclerView.ViewHolder(ite
 
     fun bind(movie: MovieModel) {
         binding.movieNameText.text = movie.name
-        binding.movieActorsText.text = movie.actors
-        binding.movieYearText.text = movie.year
         binding.movieThumbnailImage.load(movie.thumbnail)
     }
 }
