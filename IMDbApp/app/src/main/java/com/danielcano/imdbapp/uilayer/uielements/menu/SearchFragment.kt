@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,25 +17,39 @@ import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
 
 class SearchFragment : Fragment() {
     private val viewModel by viewModels<MoviesViewModel>()
-    private var _binding:FragmentSearchBinding? = null
+    private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSearchBinding.inflate(inflater,container,false)
+        _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val view = binding.root
         val movieList: RecyclerView = binding.movieList
+
         movieList.layoutManager = LinearLayoutManager(requireContext())
         val movieListAdapter = MovieSearchListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
-        viewModel.movieList.observe(viewLifecycleOwner) { movieItemsList ->
+        viewModel.filteredMovieList.observe(viewLifecycleOwner) { movieItemsList ->
             movieListAdapter.submitList(movieItemsList)
         }
         viewModel.status.observe(viewLifecycleOwner) {
             binding.statusText.text = it
         }
+
+        binding.searchView.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
+            override fun onQueryTextChange(newText: String?): Boolean {
+//                viewModel.filteredMovies(newText)
+                return false
+            }
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                viewModel.filterMovies(query)
+                return true
+            }
+        }
+        )
+
         return view
     }
 
