@@ -1,6 +1,9 @@
 package com.danielcano.imdbapp.datalayer.datasources.network
 
-data class ImdbApiServiceResponse(
+import com.squareup.moshi.Json
+
+data class TopRatedMoviesEndPointResponse(
+    @Json(name = "results")
     val results: List<MovieDtoNetwork>
 )
 

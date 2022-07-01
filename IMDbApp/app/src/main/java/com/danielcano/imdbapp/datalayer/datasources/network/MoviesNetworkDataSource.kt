@@ -1,5 +1,6 @@
 package com.danielcano.imdbapp.datalayer.datasources.network
 
 interface MoviesNetworkDataSource {
-    suspend fun getMoviesList(): List<MovieDtoNetwork>
+    suspend fun getTopRatedMovies(): List<MovieDtoNetwork>
+    suspend fun getListOfMovies(): List<MovieDtoNetwork>
 }

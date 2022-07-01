@@ -1,6 +1,5 @@
 package com.danielcano.imdbapp.datalayer.datasources.translaters
 
-import com.danielcano.imdbapp.datalayer.datasources.network.ImdbApiServiceResponse
 import com.danielcano.imdbapp.datalayer.datasources.network.MovieDtoNetwork
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 

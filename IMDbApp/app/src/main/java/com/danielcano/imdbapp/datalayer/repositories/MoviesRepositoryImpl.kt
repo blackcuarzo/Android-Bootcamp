@@ -7,9 +7,7 @@ import com.danielcano.imdbapp.domainlayer.models.MovieModel
 class MoviesRepositoryImpl(private val datasource: MoviesNetworkDataSource) : MoviesRepository {
 
     override suspend fun getMovies(): List<MovieModel> {
-        val moviesData = datasource.getMoviesList()
+        val moviesData = datasource.getTopRatedMovies()
         return MapperNetworkToDomainModel().convertData(moviesData)
     }
-
-
 }
