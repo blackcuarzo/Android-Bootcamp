@@ -32,6 +32,7 @@ class HomeFragment : Fragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         val movieListAdapter = MovieRecomendationListAdapter(::showMovieDetails)
         movieList.adapter = movieListAdapter
+        viewModel.loadHomeMovies()
         viewModel.movieList.observe(viewLifecycleOwner) { movieItemsList ->
             movieListAdapter.submitList(movieItemsList)
         }

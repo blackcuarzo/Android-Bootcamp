@@ -4,9 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.danielcano.imdbapp.datalayer.datasources.network.ListOfMoviesNetworkDataSourceImpl
 import com.danielcano.imdbapp.datalayer.datasources.network.TopRatedMoviesNetworkDataSourceImpl
 import com.danielcano.imdbapp.datalayer.repositories.MoviesRepositoryImpl
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
+import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICase
 import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICaseImpl
 import kotlinx.coroutines.launch
 
@@ -17,18 +19,19 @@ class MoviesViewModel: ViewModel() {
     val filteredMovieList:LiveData<List<MovieModel>> = _filteredMovieList
     private val _status = MutableLiveData<String>()
     val status:LiveData<String> = _status
-
-    private val usecase =
+    private val topRatedEndPointUseCase =
         GetMoviesForUICaseImpl(MoviesRepositoryImpl(TopRatedMoviesNetworkDataSourceImpl()))
+    private val listEndPointUseCase =
+        GetMoviesForUICaseImpl(MoviesRepositoryImpl(ListOfMoviesNetworkDataSourceImpl()))
 
     init {
-        loadMovies()
+        loadMovies(listEndPointUseCase)
     }
 
-    private fun loadMovies(){
+    private fun loadMovies(useCase:GetMoviesForUICase){
         viewModelScope.launch {
             try{
-                _movieList.value = usecase.getMovies()
+                _movieList.value = useCase.getMovies()
                 _status.value = "Successfully loaded ${movieList.value!!.size} items"
                 _filteredMovieList.value = _movieList.value
             }catch (e:Exception){
@@ -37,7 +40,9 @@ class MoviesViewModel: ViewModel() {
             }
         }
     }
+
     fun filterMovies(query:String?){
+        loadMovies(listEndPointUseCase)
         val searchResult: List<MovieModel>? =
             if (query == "" || query == null){
                 listOf()
@@ -50,4 +55,7 @@ class MoviesViewModel: ViewModel() {
         _status.value = "We have ${filteredMovieList.value?.size} items"
     }
 
+    fun loadHomeMovies(){
+        loadMovies(topRatedEndPointUseCase)
+    }
 }
