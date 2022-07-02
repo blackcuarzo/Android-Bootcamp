@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".menu.ProfileFragment"
-    android:orientation="vertical"
     android:background="@color/white"
-    >
+    android:orientation="vertical"
+    tools:context=".uilayer.uielements.menu.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,20 +16,20 @@
             android:id="@+id/profilePhoto"
             android:layout_width="@dimen/multiplier_20dp"
             android:layout_height="@dimen/multiplier_20dp"
-            android:src="@drawable/profile_photo"
             android:layout_marginStart="@dimen/multiplier_14dp"
             android:layout_marginTop="@dimen/multiplier_9dp"
+            android:contentDescription="@string/profile_photo_description"
+            android:src="@drawable/profile_photo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Daniel Cano"
-            android:textSize="@dimen/multiplier_8sp"
             android:layout_marginStart="@dimen/multiplier_15dp"
+            android:text="@string/user_name"
             android:textColor="@color/black"
+            android:textSize="@dimen/multiplier_8sp"
             app:layout_constraintBottom_toBottomOf="@+id/profilePhoto"
             app:layout_constraintStart_toEndOf="@id/profilePhoto"
             app:layout_constraintTop_toTopOf="@+id/profilePhoto" />
@@ -38,8 +37,8 @@
         <ImageView
             android:layout_width="@dimen/multiplier_14dp"
             android:layout_height="@dimen/multiplier_14dp"
-
             android:layout_marginEnd="@dimen/multiplier_14dp"
+            android:contentDescription="@string/settings_symbol_description"
             android:src="@drawable/ic_outline_settings_24"
             app:layout_constraintBottom_toBottomOf="@+id/profilePhoto"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,15 +65,14 @@
             android:layout_height="@dimen/multiplier_77dp"
             android:layout_marginStart="@dimen/multiplier_14dp"
             android:layout_marginTop="@dimen/multiplier_18dp"
-            android:layout_marginBottom="@dimen/multiplier_14dp"
-            >
+            android:layout_marginBottom="@dimen/multiplier_14dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="@dimen/multiplier_6dp"
-                >
+                android:padding="@dimen/multiplier_6dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/multiplier_45dp"
@@ -84,27 +82,25 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Calificar y obtener recomendaciones"
-                        android:textSize="@dimen/multiplier_5sp"
+                        android:text="@string/card_internal_text"
                         android:textColor="@color/black"
-                        />
+                        android:textSize="@dimen/multiplier_5sp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/multiplier_6dp"
-                    android:text="Calificaciones"
-                    android:textSize="@dimen/multiplier_5sp"
+                    android:text="@string/card_ratings_text"
                     android:textColor="@color/black"
-                    />
+                    android:textSize="@dimen/multiplier_5sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/multiplier_5sp"
-                    android:text="0"
+                    android:text="@string/card_numberof_ratings"
                     android:textColor="@color/grey_default"
-                    />
+                    android:textSize="@dimen/multiplier_5sp" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -117,70 +113,65 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/multiplier_14dp"
         android:layout_marginStart="@dimen/multiplier_15dp"
+        android:layout_marginTop="@dimen/multiplier_14dp"
         android:layout_marginEnd="@dimen/multiplier_24dp"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lista de seguimiento"
+            android:text="@string/follow_list_title"
             android:textColor="@color/black"
-            android:textSize="@dimen/multiplier_12dp"
+            android:textSize="@dimen/multiplier_12sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/multiplier_14dp"
-            android:textSize="@dimen/multiplier_8sp"
-            android:text="Crea una lista de seguimiento para no perderte ninguna película o serie de tv"
+            android:text="@string/follow_list_details"
             android:textColor="@color/black"
-            />
+            android:textSize="@dimen/multiplier_8sp" />
     </LinearLayout>
 
     <Button
         style="@style/followListButton"
         android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/multiplier_15dp"
-        android:layout_marginEnd="@dimen/multiplier_15dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/multiplier_15dp"
         android:layout_marginTop="@dimen/multiplier_15dp"
+        android:layout_marginEnd="@dimen/multiplier_15dp"
         android:layout_marginBottom="@dimen/multiplier_15dp"
-        android:text="Empieza tu lista de seguimiento"
         android:padding="15dp"
-        />
+        android:text="@string/follow_list_button" />
 
     <View style="@style/Divider" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/multiplier_14dp"
         android:layout_marginStart="@dimen/multiplier_15dp"
+        android:layout_marginTop="@dimen/multiplier_14dp"
         android:layout_marginEnd="@dimen/multiplier_24dp"
         android:layout_marginBottom="@dimen/multiplier_15dp"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vistas Recientes"
+            android:text="@string/recent_views_title"
             android:textColor="@color/black"
-            android:textSize="@dimen/multiplier_12dp"
+            android:textSize="@dimen/multiplier_12sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/multiplier_14dp"
-            android:textSize="@dimen/multiplier_8sp"
-            android:text="No has visitado ninguna página recientemente"
+            android:text="@string/recent_views_details"
             android:textColor="@color/black"
-            />
+            android:textSize="@dimen/multiplier_8sp" />
     </LinearLayout>
 
     <View style="@style/Divider" />
@@ -188,29 +179,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/multiplier_14dp"
         android:layout_marginStart="@dimen/multiplier_15dp"
+        android:layout_marginTop="@dimen/multiplier_14dp"
         android:layout_marginEnd="@dimen/multiplier_24dp"
         android:layout_marginBottom="@dimen/multiplier_15dp"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Personas favoritas"
+            android:text="@string/favourite_persons_title"
             android:textColor="@color/black"
-            android:textSize="@dimen/multiplier_12dp"
+            android:textSize="@dimen/multiplier_12sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/multiplier_14dp"
-            android:textSize="@dimen/multiplier_8sp"
-            android:text="No has añadido ninguna persona recientemente"
+            android:text="@string/favorite_persons_details"
             android:textColor="@color/black"
-            />
+            android:textSize="@dimen/multiplier_8sp" />
     </LinearLayout>
 
 
