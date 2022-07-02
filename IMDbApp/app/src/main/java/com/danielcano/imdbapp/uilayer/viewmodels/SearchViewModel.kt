@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class SearchViewModel: ViewModel() {
     private val _movieList =  MutableLiveData<List<MovieModel>>()
-    val movieList:LiveData<List<MovieModel>> = _movieList
+    private val movieList:LiveData<List<MovieModel>> = _movieList
     private val _filteredMovieList =  MutableLiveData<List<MovieModel>>()
     val filteredMovieList:LiveData<List<MovieModel>> = _filteredMovieList
     private val _status = MutableLiveData<String>()
@@ -39,15 +39,15 @@ class SearchViewModel: ViewModel() {
     }
 
     fun filterMovies(query:String?){
-        loadMovies(listEndPointUseCase)
         val searchResult: List<MovieModel> =
             if (query.isNullOrEmpty()){
-                listOf()
+                movieList.value!!
             }else{
                movieList.value!!.filter {movieModel ->
                     movieModel.name.contains(query)
                 }
             }
+
         _filteredMovieList.value = searchResult
         _status.value = "We have ${filteredMovieList.value?.size} items"
     }

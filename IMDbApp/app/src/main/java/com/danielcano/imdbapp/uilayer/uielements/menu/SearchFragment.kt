@@ -40,7 +40,7 @@ class SearchFragment : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
             override fun onQueryTextChange(newText: String?): Boolean {
-//                viewModel.filteredMovies(newText)
+                viewModel.filterMovies(newText)
                 return false
             }
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -49,7 +49,6 @@ class SearchFragment : Fragment() {
             }
         }
         )
-
         return view
     }
 
