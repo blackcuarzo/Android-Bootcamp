@@ -1,10 +1,9 @@
-package com.danielcano.imdbapp
+package com.danielcano.imdbapp.domainlayer.usecases
 
 import com.danielcano.imdbapp.datalayer.databases.User
 import com.danielcano.imdbapp.datalayer.repositories.UserRepository
-import com.danielcano.imdbapp.domainlayer.usecases.UserValidationUseCase
 
-class UserValidationUseCaseFakeImpl(val userRepository: UserRepository) :
+class UserValidationUseCaseImpl(private val userRepository: UserRepository) :
     UserValidationUseCase {
 
     override fun registerUser(user: User) {
@@ -21,4 +20,3 @@ class UserValidationUseCaseFakeImpl(val userRepository: UserRepository) :
         return false
     }
 }
-

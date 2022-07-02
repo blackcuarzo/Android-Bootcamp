@@ -9,8 +9,8 @@ import org.junit.runner.RunWith
 class UserValidationCaseFakeTests {
 
     @Test
-    fun userRepository_getUser_userMail_success(){
-        val userRepositoryFake = UserRepositoryFakeImpl()
+    fun userRepository_getUser_userMail_success() {
+        val userRepositoryFake = UserRepositoryFake()
         val user = User(email = "carlos.gmail.com", name = "carlos", password = "1234")
         userRepositoryFake.addUserToDataBase(user)
 
@@ -18,8 +18,8 @@ class UserValidationCaseFakeTests {
     }
 
     @Test
-    fun userValidationUseCase_registerUser_success(){
-        val userValidationUseCaseFake = UserValidationUseCaseFakeImpl(UserRepositoryFakeImpl())
+    fun userValidationUseCase_registerUser_success() {
+        val userValidationUseCaseFake = UserValidationUseCaseFakeImpl(UserRepositoryFake())
         val user1 = User(name = "Carlos", email = "carlos@gmail.com", password = "12345")
         val user2 = User(name = "Juan", email = "juan@gmail.com", password = "123")
         userValidationUseCaseFake.registerUser(user1)
@@ -28,22 +28,27 @@ class UserValidationCaseFakeTests {
     }
 
     @Test
-    fun userValidationUseCase_validateUser_userMailAndUserPass_success(){
-        val userValidationUseCaseFake = UserValidationUseCaseFakeImpl(UserRepositoryFakeImpl())
+    fun userValidationUseCase_validateUser_userMailAndUserPass_success() {
+        val userValidationUseCaseFake = UserValidationUseCaseFakeImpl(UserRepositoryFake())
         val user1 = User(name = "Carlos", email = "carlos@gmail.com", password = "12345")
         val user2 = User(name = "Juan", email = "juan@gmail.com", password = "123")
         userValidationUseCaseFake.registerUser(user1)
         userValidationUseCaseFake.registerUser(user2)
-        assert(userValidationUseCaseFake.validateUser(userMail = "carlos@gmail.com", userPass = "12345"))
+        assert(
+            userValidationUseCaseFake.validateUser(
+                userMail = "carlos@gmail.com",
+                userPass = "12345"
+            )
+        )
     }
 
     @Test
-    fun userValidationUseCase_validateUser_fail(){
-        val userValidationUseCaseFake = UserValidationUseCaseFakeImpl(UserRepositoryFakeImpl())
+    fun userValidationUseCase_validateUser_fail() {
+        val userValidationUseCaseFake = UserValidationUseCaseFakeImpl(UserRepositoryFake())
         val user1 = User(name = "Carlos", email = "carlos@gmail.com", password = "12345")
         val user2 = User(name = "Juan", email = "juan@gmail.com", password = "123")
         userValidationUseCaseFake.registerUser(user1)
         userValidationUseCaseFake.registerUser(user2)
-        assert(!userValidationUseCaseFake.validateUser("juan@gmail.com","12345"))
+        assert(!userValidationUseCaseFake.validateUser("juan@gmail.com", "12345"))
     }
 }
