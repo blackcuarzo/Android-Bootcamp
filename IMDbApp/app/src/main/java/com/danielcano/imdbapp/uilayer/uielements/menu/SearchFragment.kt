@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.danielcano.imdbapp.uilayer.adapters.MovieSearchListAdapter
 import com.danielcano.imdbapp.databinding.FragmentSearchBinding
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
-import com.danielcano.imdbapp.uilayer.viewmodels.MoviesViewModel
+import com.danielcano.imdbapp.uilayer.viewmodels.SearchViewModel
 
 class SearchFragment : Fragment() {
-    private val viewModel by viewModels<MoviesViewModel>()
+    private val viewModel by viewModels<SearchViewModel>()
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
 

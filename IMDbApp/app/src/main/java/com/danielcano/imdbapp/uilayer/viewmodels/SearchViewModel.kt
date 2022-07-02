@@ -12,7 +12,7 @@ import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICase
 import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICaseImpl
 import kotlinx.coroutines.launch
 
-class MoviesViewModel: ViewModel() {
+class SearchViewModel: ViewModel() {
     private val _movieList =  MutableLiveData<List<MovieModel>>()
     val movieList:LiveData<List<MovieModel>> = _movieList
     private val _filteredMovieList =  MutableLiveData<List<MovieModel>>()
