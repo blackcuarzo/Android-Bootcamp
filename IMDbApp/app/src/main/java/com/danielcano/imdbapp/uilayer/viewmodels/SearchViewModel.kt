@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danielcano.imdbapp.datalayer.datasources.network.ListOfMoviesNetworkDataSourceImpl
-import com.danielcano.imdbapp.datalayer.datasources.network.TopRatedMoviesNetworkDataSourceImpl
 import com.danielcano.imdbapp.datalayer.repositories.MoviesRepositoryImpl
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICase
@@ -19,8 +18,6 @@ class SearchViewModel: ViewModel() {
     val filteredMovieList:LiveData<List<MovieModel>> = _filteredMovieList
     private val _status = MutableLiveData<String>()
     val status:LiveData<String> = _status
-    private val topRatedEndPointUseCase =
-        GetMoviesForUICaseImpl(MoviesRepositoryImpl(TopRatedMoviesNetworkDataSourceImpl()))
     private val listEndPointUseCase =
         GetMoviesForUICaseImpl(MoviesRepositoryImpl(ListOfMoviesNetworkDataSourceImpl()))
 
@@ -43,19 +40,15 @@ class SearchViewModel: ViewModel() {
 
     fun filterMovies(query:String?){
         loadMovies(listEndPointUseCase)
-        val searchResult: List<MovieModel>? =
-            if (query == "" || query == null){
+        val searchResult: List<MovieModel> =
+            if (query.isNullOrEmpty()){
                 listOf()
             }else{
                movieList.value!!.filter {movieModel ->
                     movieModel.name.contains(query)
                 }
             }
-        _filteredMovieList.value = searchResult!!
+        _filteredMovieList.value = searchResult
         _status.value = "We have ${filteredMovieList.value?.size} items"
-    }
-
-    fun loadHomeMovies(){
-        loadMovies(topRatedEndPointUseCase)
     }
 }
