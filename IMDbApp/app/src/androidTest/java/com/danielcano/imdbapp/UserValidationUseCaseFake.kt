@@ -1,7 +1,8 @@
 package com.danielcano.imdbapp
 
-import android.service.autofill.UserData
-import androidx.room.Database
+import android.content.Context
+import androidx.room.Room
+import androidx.test.core.app.ApplicationProvider
 import com.danielcano.imdbapp.datalayer.databases.User
 import com.danielcano.imdbapp.datalayer.databases.UserDatabase
 
@@ -68,8 +69,9 @@ class UserRepositoryFakeImpl : UserRepository {
     }
 }
 
-class UserRepositoryImpl(private val database: UserDatabase) : UserRepository {
-    private var userList: MutableList<User> = mutableListOf()
+class UserRepositoryImpl() : UserRepository {
+    private var context = ApplicationProvider.getApplicationContext<Context>()
+    private val database = Room.inMemoryDatabaseBuilder(context, UserDatabase::class.java).build()
 
     override fun addUserToDataBase(user: User) {
         database.userDao().addUser(user)
