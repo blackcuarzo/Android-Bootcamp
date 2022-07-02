@@ -1,20 +1,30 @@
 package com.danielcano.imdbapp
 
+import android.content.Context
+import androidx.room.Room
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.danielcano.imdbapp.datalayer.databases.User
 import com.danielcano.imdbapp.datalayer.databases.UserDatabase
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class UserValidationCaseTests {
-//    private lateinit var userDatabase: UserDatabase
+    private lateinit var userDatabase: UserDatabase
 
 //    @Before
 //    fun setUpDatabase() {
 //        var context = ApplicationProvider.getApplicationContext<Context>()
 //        userDatabase = Room.inMemoryDatabaseBuilder(context, UserDatabase::class.java).build()
 //    }
+
+    @Before
+    fun setUpDatabase() {
+        var context = ApplicationProvider.getApplicationContext<Context>()
+        userDatabase = Room.inMemoryDatabaseBuilder(context, UserDatabase::class.java).build()
+    }
 
     @Test
     fun userRepository_getUser_userMail_success(){
@@ -53,4 +63,6 @@ class UserValidationCaseTests {
         userValidationUseCase.registerUser(user2)
         assert(!userValidationUseCase.validateUser("juan@gmail.com","12345"))
     }
+
+
 }
