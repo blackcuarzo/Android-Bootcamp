@@ -2,6 +2,11 @@ package com.danielcano.imdbapp
 
 import com.danielcano.imdbapp.datalayer.databases.User
 
+interface UserValidationUseCase {
+    fun registerUser(user: User)
+    fun validateUser(userMail: String, userPass: String): Boolean
+}
+
 class UserValidationUseCaseFakeImpl(val userRepository: UserRepository) :
     UserValidationUseCase {
 
@@ -37,12 +42,6 @@ class UserValidationUseCaseImpl(val userRepository: UserRepository) :
         return false
     }
 }
-
-interface UserValidationUseCase {
-    fun registerUser(user: User)
-    fun validateUser(userMail: String, userPass: String): Boolean
-}
-
 
 interface UserRepository {
     fun addUserToDataBase(user: User)

@@ -21,7 +21,6 @@ class UserValidationCaseTests {
         val userRepository = UserRepositoryImpl()
         val user = User(email = "carlos.gmail.com", name = "carlos", password = "1234")
         userRepository.addUserToDataBase(user)
-
         assert(userRepository.getUser(user.email)!!.email == user.email)
     }
 
