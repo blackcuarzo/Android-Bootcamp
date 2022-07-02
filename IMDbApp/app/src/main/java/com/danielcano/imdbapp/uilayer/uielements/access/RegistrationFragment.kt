@@ -42,7 +42,7 @@ class RegistrationFragment : Fragment() {
             //We need to take this if statement out of this place
             if (viewModel.registerOrValidateUser(
                     name = binding.userName.text.toString(),
-                    mail = binding.userMail.text.toString(),
+                    email = binding.userMail.text.toString(),
                     pass = binding.userPass.text.toString()
                 )
             ) {
