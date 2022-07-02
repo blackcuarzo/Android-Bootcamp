@@ -2,7 +2,7 @@ package com.danielcano.imdbapp.datalayer.datasources.network
 
 import com.squareup.moshi.Json
 
-data class MovieDtoNetwork(
+data class MovieNetworkDto(
     val title: String,
     @Json(name = "original_title")
     val originalTitle: String,

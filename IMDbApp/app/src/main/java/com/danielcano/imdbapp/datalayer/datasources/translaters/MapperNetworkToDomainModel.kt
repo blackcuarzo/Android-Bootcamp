@@ -1,12 +1,12 @@
 package com.danielcano.imdbapp.datalayer.datasources.translaters
 
-import com.danielcano.imdbapp.datalayer.datasources.network.MovieDtoNetwork
+import com.danielcano.imdbapp.datalayer.datasources.network.MovieNetworkDto
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
 class MapperNetworkToDomainModel () {
     private val imgUrlBase = "https://image.tmdb.org/t/p/w500"
 
-    fun convertData(remoteData:List<MovieDtoNetwork>):List<MovieModel>{
+    fun convertData(remoteData:List<MovieNetworkDto>):List<MovieModel>{
         val convertedData = mutableListOf<MovieModel>()
 
         remoteData.forEach{
