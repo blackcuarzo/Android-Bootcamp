@@ -13,9 +13,6 @@ abstract class UserDatabase : RoomDatabase() {
     companion object {
         @Volatile private var instance: UserDatabase? = null
 
-        fun getInstance():UserDatabase{
-            return instance!!
-        }
         fun getInstance(context: Context): UserDatabase {
             return instance ?: synchronized(this) {
                 instance ?: buildDatabase(context).also { instance = it }
