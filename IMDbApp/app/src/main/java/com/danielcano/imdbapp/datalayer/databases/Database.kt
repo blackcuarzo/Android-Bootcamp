@@ -11,13 +11,15 @@ abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 
     companion object {
-        private var instance: UserDatabase? = null
+        @Volatile private var instance: UserDatabase? = null
 
-        fun getInstance(context: Context): UserDatabase {
-            if (instance == null) {
-                instance = buildDatabase(context)
-            }
+        fun getInstance():UserDatabase{
             return instance!!
+        }
+        fun getInstance(context: Context): UserDatabase {
+            return instance ?: synchronized(this) {
+                instance ?: buildDatabase(context).also { instance = it }
+            }
         }
 
         private fun buildDatabase(context: Context): UserDatabase {
@@ -26,7 +28,6 @@ abstract class UserDatabase : RoomDatabase() {
                 UserDatabase::class.java,
                 "userDatabase"
             ).build()
-
         }
     }
 }
