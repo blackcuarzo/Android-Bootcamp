@@ -5,12 +5,13 @@ import com.danielcano.imdbapp.datalayer.databases.UserDatabase
 
 class UserRepositoryImpl() : UserRepository {
 
-    override fun addUserToDataBase(user: User) {
+    override suspend fun addUserToDataBase(user: User) {
+        
         UserDatabase.getInstance().userDao().addUser(user)
 //        UserDatabase.getInstance(MyApplication).userDao().addUser(user)
     }
 
-    override fun getUser(userMail: String): User? {
+    override suspend fun getUser(userMail: String): User? {
         return UserDatabase.getInstance().userDao().getUserByEmail(userMail)
 //        return UserDatabase.getInstance(ApplicationProvider.getApplicationContext()).userDao().getUserByEmail(userMail)
     }

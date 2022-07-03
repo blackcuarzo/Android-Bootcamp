@@ -6,11 +6,11 @@ import com.danielcano.imdbapp.datalayer.repositories.UserRepository
 class UserValidationUseCaseImpl(private val userRepository: UserRepository) :
     UserValidationUseCase {
 
-    override fun registerUser(user: User) {
+    override suspend fun registerUser(user: User) {
         userRepository.addUserToDataBase(user)
     }
 
-    override fun validateUser(userMail: String, userPass: String): Boolean {
+    override suspend fun validateUser(userMail: String, userPass: String): Boolean {
         val user = userRepository.getUser(userMail)
         user?.let {
             if (it.password == userPass) {
