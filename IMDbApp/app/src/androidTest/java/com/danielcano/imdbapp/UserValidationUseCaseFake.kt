@@ -20,5 +20,9 @@ class UserValidationUseCaseFakeImpl(val userRepository: UserRepository) :
         }
         return false
     }
+
+    override suspend fun userExists(userMail: String): Boolean {
+        return true
+    }
 }
 

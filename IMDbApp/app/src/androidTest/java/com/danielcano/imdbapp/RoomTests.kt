@@ -6,6 +6,9 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.danielcano.imdbapp.datalayer.databases.User
 import com.danielcano.imdbapp.datalayer.databases.UserDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,16 +26,20 @@ class RoomTests {
     @Test
     fun createAndConsultUser_user_success() {
         val user = User(name = "Daniel", email = "daniel.cano@gmail.com", password = "1234")
-        userDatabase.userDao().addUser(user)
-        val usuario = userDatabase.userDao().getUserByEmail("daniel.cano@gmail.com")
-        assert(usuario.name == "Daniel")
+        CoroutineScope(Dispatchers.IO).launch{
+            userDatabase.userDao().addUser(user)
+            val usuario = userDatabase.userDao().getUserByEmail("daniel.cano@gmail.com")
+            assert(usuario.name == "Daniel")
+        }
     }
 
     @Test
     fun checkUserPassword_user_success() {
         val user = User(name = "Carlos", email = "carlos@gmail.com", password = "34512")
-        userDatabase.userDao().addUser(user)
-        val usuario = userDatabase.userDao().getUserByEmail("carlos@gmail.com")
-        assert(usuario.password == "34512")
+        CoroutineScope(Dispatchers.IO).launch {
+            userDatabase.userDao().addUser(user)
+            val usuario = userDatabase.userDao().getUserByEmail("carlos@gmail.com")
+            assert(usuario.password == "34512")
+        }
     }
 }
