@@ -37,17 +37,19 @@ class RegistrationFragment : Fragment() {
         val toolbar = binding.toolbar
         toolbar.setupWithNavController(navController)
 
+        viewModel.registrationStatus.observe(viewLifecycleOwner) { registrationStatusIsTrue ->
+            if (registrationStatusIsTrue) {
+                navigator.navigateToMenu()
+            }
+        }
+
         val registrationLink = binding.confirmationButton
         registrationLink.setOnClickListener {
-            //We need to take this if statement out of this place
-            if (viewModel.registerUser(
+            viewModel.registerUser(
                     name = binding.userName.text.toString(),
                     email = binding.userMail.text.toString(),
                     pass = binding.userPass.text.toString()
                 )
-            ) {
-                navigator.navigateToMenu()
-            }
         }
         return view
     }

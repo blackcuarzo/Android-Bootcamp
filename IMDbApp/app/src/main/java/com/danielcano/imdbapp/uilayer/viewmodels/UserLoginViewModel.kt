@@ -29,7 +29,7 @@ class UserLoginViewModel : ViewModel() {
                 } else {
                     val toast = Toast.makeText(
                         App.getContext(),
-                        "Not valid User or credentials",
+                        "Usuario o credenciales no válidas",
                         Toast.LENGTH_SHORT
                     )
                     toast.show()

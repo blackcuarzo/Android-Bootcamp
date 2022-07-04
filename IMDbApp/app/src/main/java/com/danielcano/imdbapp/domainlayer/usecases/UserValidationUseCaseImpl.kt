@@ -19,4 +19,11 @@ class UserValidationUseCaseImpl(private val userRepository: UserRepository) :
         }
         return false
     }
+    override suspend fun userExists(userMail: String):Boolean{
+        val user = userRepository.getUser(userMail)
+        user?.let {
+            return true
+        }
+        return false
+    }
 }
