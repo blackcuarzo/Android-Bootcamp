@@ -8,12 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import com.danielcano.imdbapp.uilayer.AccessNavigator
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.databinding.FragmentLoginBinding
+import com.danielcano.imdbapp.uilayer.viewmodels.UserLoginViewModel
+import com.danielcano.imdbapp.uilayer.viewmodels.UserRegistrationViewModel
 
 class LoginFragment : Fragment() {
     private lateinit var navigator: AccessNavigator
+    private val viewModel by viewModels<UserLoginViewModel>()
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
@@ -27,13 +31,17 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentLoginBinding.inflate(inflater,container,false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        // Code goes here
+        viewModel.loginStatus.observe(viewLifecycleOwner) { loginStatusIsTrue ->
+            if (loginStatusIsTrue) {
+                navigator.navigateToMenu()
+            }
+        }
+
         val guestLink = binding.guestLink
         guestLink.setOnClickListener {
-
             navigator.navigateToRegistration(it)
         }
 
@@ -44,7 +52,10 @@ class LoginFragment : Fragment() {
 
         val buttonLogin = binding.loginButton
         buttonLogin.setOnClickListener {
-            navigator.navigateToMenu()
+            viewModel.loginUser(
+                binding.userName.text.toString(),
+                binding.userPass.text.toString()
+            )
         }
 
         return view

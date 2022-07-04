@@ -13,7 +13,7 @@ class UserRegistrationViewModel : ViewModel() {
     private var userValidationUseCase: UserValidationUseCaseImpl =
         UserValidationUseCaseImpl(UserRepositoryImpl())
 
-    fun registerOrValidateUser(name: String, email: String, pass: String): Boolean {
+    fun registerUser(name: String, email: String, pass: String): Boolean {
 
         return when {
             name.isEmpty() -> false

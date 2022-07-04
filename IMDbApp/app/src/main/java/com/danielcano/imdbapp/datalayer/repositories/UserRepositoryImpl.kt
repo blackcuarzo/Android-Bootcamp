@@ -9,11 +9,9 @@ class UserRepositoryImpl() : UserRepository {
 
     override suspend fun addUserToDataBase(user: User) {
         UserDatabase.getInstance(App.getContext()).userDao().addUser(user)
-//        UserDatabase.getInstance(MyApplication).userDao().addUser(user)
     }
 
     override suspend fun getUser(userMail: String): User? {
         return UserDatabase.getInstance(App.getContext()).userDao().getUserByEmail(userMail)
-//        return UserDatabase.getInstance(ApplicationProvider.getApplicationContext()).userDao().getUserByEmail(userMail)
     }
 }

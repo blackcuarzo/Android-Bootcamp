@@ -40,7 +40,7 @@ class RegistrationFragment : Fragment() {
         val registrationLink = binding.confirmationButton
         registrationLink.setOnClickListener {
             //We need to take this if statement out of this place
-            if (viewModel.registerOrValidateUser(
+            if (viewModel.registerUser(
                     name = binding.userName.text.toString(),
                     email = binding.userMail.text.toString(),
                     pass = binding.userPass.text.toString()
