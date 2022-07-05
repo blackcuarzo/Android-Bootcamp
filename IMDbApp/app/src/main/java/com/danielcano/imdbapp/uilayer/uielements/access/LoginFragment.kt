@@ -9,11 +9,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.findNavController
 import com.danielcano.imdbapp.uilayer.AccessNavigator
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.databinding.FragmentLoginBinding
 import com.danielcano.imdbapp.uilayer.viewmodels.UserLoginViewModel
 import com.danielcano.imdbapp.uilayer.viewmodels.UserRegistrationViewModel
+import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
     private lateinit var navigator: AccessNavigator
@@ -34,9 +37,14 @@ class LoginFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        val navController = findNavController()
+
         viewModel.loginStatus.observe(viewLifecycleOwner) { loginStatusIsTrue ->
             if (loginStatusIsTrue) {
-                navigator.navigateToMenu()
+                val action = LoginFragmentDirections.actionLoginFragmentToMenuActivity(
+                    userName = viewModel.loginData.value!!
+                )
+                navController.navigate(action)
             }
         }
 

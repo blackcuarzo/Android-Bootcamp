@@ -26,4 +26,7 @@ class UserValidationUseCaseImpl(private val userRepository: UserRepository) :
         }
         return false
     }
+    override suspend fun getUserName(userMail: String):String{
+        return userRepository.getUser(userMail)?.name ?: "Not given name"
+    }
 }

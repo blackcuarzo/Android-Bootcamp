@@ -17,14 +17,19 @@ class UserLoginViewModel : ViewModel() {
     private var _loginStatus = MutableLiveData<Boolean>()
     val loginStatus: LiveData<Boolean> = _loginStatus
 
+    private var _loginData = MutableLiveData<String>()
+    val loginData: LiveData<String> = _loginData
+
+
     init {
         _loginStatus.value = false
     }
 
-    fun loginUser(userName: String, userPass: String) {
+    fun loginUser(userMail: String, userPass: String) {
         try {
             viewModelScope.launch {
-                if (userValidationUseCase.validateUser(userMail = userName, userPass = userPass)) {
+                if (userValidationUseCase.validateUser(userMail = userMail, userPass = userPass)) {
+                    _loginData.value = userValidationUseCase.getUserName(userMail)
                     _loginStatus.value = true
                 } else {
                     val toast = Toast.makeText(
