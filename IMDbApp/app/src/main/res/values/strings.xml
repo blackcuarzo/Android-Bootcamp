@@ -78,4 +78,13 @@
     <string name="preference_user_name">Nombre por defecto</string>
     <string name="preferences">userPreferences</string>
     <string name="default_username">Invitado</string>
+    <string name="empty_name_error">Por favor introducir el Nombre</string>
+    <string name="empty_mail_error">Por favor introducir Email</string>
+    <string name="empty_password_error">Por favor introducir contraseña</string>
+    <string name="short_password_error">La contraseña debe tener por lo menos 8 caracteres</string>
+    <string name="not_valid_email_error">Email no válido</string>
+    <string name="preexistent_user_error">Un usuario con ese correo electrónico ya existe</string>
+    <string name="registering_problem_error">Hubo un problema al intentar registrar</string>
+    <string name="user_validation_exception">error de userValidationUseCase</string>
+    <string name="not_valid_credentials">Usuario o credenciales no válidas</string>
 </resources>
