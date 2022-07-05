@@ -36,7 +36,6 @@ class LoginFragment : Fragment() {
     ): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
-
         val navController = findNavController()
 
         viewModel.loginStatus.observe(viewLifecycleOwner) { loginStatusIsTrue ->
@@ -49,13 +48,14 @@ class LoginFragment : Fragment() {
         }
 
         val guestRegistrationDirection = LoginFragmentDirections.actionLoginFragmentToMenuActivity(
-            userName = "Invitado"
+            userName = getString(R.string.default_username)
         )
         binding.guestLink.setOnClickListener {
             navController.navigate(guestRegistrationDirection)
         }
 
-        val registrationDirection = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
+        val registrationDirection =
+            LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
         binding.registrationLink.setOnClickListener {
             navController.navigate(registrationDirection)
         }
@@ -66,7 +66,6 @@ class LoginFragment : Fragment() {
                 binding.userPass.text.toString()
             )
         }
-
         return view
     }
 
