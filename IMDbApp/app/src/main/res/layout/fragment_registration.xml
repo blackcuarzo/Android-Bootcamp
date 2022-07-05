@@ -35,9 +35,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/multiplier_24dp"
+            android:layout_marginTop="@dimen/multiplier_20dp"
             android:text="@string/account_creation"
-            android:textSize="@dimen/multiplier_8sp"
+            android:textSize="@dimen/multiplier_12sp"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout

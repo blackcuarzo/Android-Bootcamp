@@ -38,7 +38,6 @@ class UserValidationCaseTests {
                 )
             )
         }
-
     }
 
     @Test
@@ -51,7 +50,5 @@ class UserValidationCaseTests {
             userValidationUseCase.registerUser(user2)
             assert(!userValidationUseCase.validateUser("juan@gmail.com", "12345"))
         }
-
     }
-
 }

@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="125dp"
     android:layout_height="280dp"
+    android:layout_marginStart="5dp"
     android:layout_marginEnd="15dp"
     android:layout_marginBottom="42dp"
-    android:layout_marginStart="5dp"
     android:background="@color/white"
     android:elevation="@dimen/multiplier_5dp">
 
@@ -17,9 +17,9 @@
         app:layout_constraintGuide_percent="0.7" />
 
     <ImageView
-        android:layout_marginStart="@dimen/multiplier_3dp"
         android:layout_width="@dimen/multiplier_9dp"
         android:layout_height="@dimen/multiplier_13dp"
+        android:layout_marginStart="@dimen/multiplier_3dp"
         android:elevation="@dimen/multiplier_5dp"
         android:scaleType="centerCrop"
         android:src="@drawable/add_bookmark"
@@ -43,8 +43,8 @@
         android:layout_height="@dimen/multiplier_8dp"
         android:layout_marginEnd="@dimen/multiplier_4dp"
         android:layout_marginBottom="@dimen/multiplier_6dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/ic_outline_info_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
@@ -76,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/multiplier_5dp"
         android:text="@string/movie_name_default"
+        android:textColor="@color/black"
         android:textSize="@dimen/mutliplier_6sp"
         app:layout_constraintStart_toStartOf="@+id/ratingsymbol"
         app:layout_constraintTop_toBottomOf="@+id/ratingsymbol" />

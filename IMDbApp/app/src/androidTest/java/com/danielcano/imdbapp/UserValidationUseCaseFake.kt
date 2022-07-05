@@ -4,7 +4,7 @@ import com.danielcano.imdbapp.datalayer.databases.User
 import com.danielcano.imdbapp.datalayer.repositories.UserRepository
 import com.danielcano.imdbapp.domainlayer.usecases.UserValidationUseCase
 
-class UserValidationUseCaseFakeImpl(val userRepository: UserRepository) :
+class UserValidationUseCaseFakeImpl (val userRepository: UserRepository) :
     UserValidationUseCase {
 
     override suspend fun registerUser(user: User) {
@@ -23,6 +23,10 @@ class UserValidationUseCaseFakeImpl(val userRepository: UserRepository) :
 
     override suspend fun userExists(userMail: String): Boolean {
         return true
+    }
+
+    override suspend fun getUserName(userMail: String): String {
+        return ""
     }
 }
 
