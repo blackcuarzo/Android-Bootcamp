@@ -48,12 +48,16 @@ class LoginFragment : Fragment() {
             }
         }
 
+        val guestRegistrationDirection = LoginFragmentDirections.actionLoginFragmentToMenuActivity(
+            userName = "Invitado"
+        )
         binding.guestLink.setOnClickListener {
-            navigator.navigateToRegistration(it)
+            navController.navigate(guestRegistrationDirection)
         }
 
+        val registrationDirection = LoginFragmentDirections.actionLoginFragmentToRegistrationFragment()
         binding.registrationLink.setOnClickListener {
-            navigator.navigateToRegistration(it)
+            navController.navigate(registrationDirection)
         }
 
         binding.loginButton.setOnClickListener {
