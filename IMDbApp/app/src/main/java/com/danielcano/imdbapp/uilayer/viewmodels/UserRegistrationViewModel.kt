@@ -23,7 +23,7 @@ class UserRegistrationViewModel : ViewModel() {
         _registrationStatus.value = false
     }
 
-    fun registerUser(name: String, email: String, pass: String){
+    fun registerUser(name: String, email: String, pass: String) {
         when {
             name.isEmpty() -> showErrorMessage("Por favor introducir el Nombre")
             email.isEmpty() -> showErrorMessage("Por favor introducir Email")
@@ -33,9 +33,9 @@ class UserRegistrationViewModel : ViewModel() {
             else -> {
                 viewModelScope.launch {
                     try {
-                        if(userValidationUseCase.userExists(email)){
+                        if (userValidationUseCase.userExists(email)) {
                             showErrorMessage("Un usuario con ese correo electrónico ya existe")
-                        }else{
+                        } else {
                             userValidationUseCase.registerUser(
                                 User(
                                     name = name,
@@ -43,28 +43,25 @@ class UserRegistrationViewModel : ViewModel() {
                                     password = pass
                                 )
                             )
-                            if (userValidationUseCase.validateUser(userMail = email, userPass = pass) ) {
+                            if (userValidationUseCase.validateUser(
+                                    userMail = email,
+                                    userPass = pass
+                                )
+                            ) {
                                 _registrationStatus.value = true
+                            } else {
+                                showErrorMessage("Hubo un problema al intentar registrar")
                             }
-                            else{showErrorMessage("Hubo un problema al intentar registrar")}
                         }
                     } catch (e: Exception) {
                         Log.e("error de userValidationUseCase", e.toString())
                     }
                 }
-//                viewModelScope.launch {
-//                    try {
-//                        if (userValidationUseCase.validateUser(userMail = name, userPass = pass)) {
-//                            _registrationStatus.value = true
-//                        }
-//                    } catch (e: Exception) {
-//                        Log.e("error de userValidationUseCase", e.toString())
-//                    }
-//                }
             }
         }
     }
-    private fun showErrorMessage(message:String){
+
+    private fun showErrorMessage(message: String) {
         val toast = Toast.makeText(
             App.getContext(),
             message,

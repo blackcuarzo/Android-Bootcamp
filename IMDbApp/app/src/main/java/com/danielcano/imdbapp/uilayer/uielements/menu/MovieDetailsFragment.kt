@@ -4,28 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.setupWithNavController
 import coil.load
-import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.databinding.FragmentMovieDetailsBinding
 
 class MovieDetailsFragment : Fragment() {
     private val args: MovieDetailsFragmentArgs by navArgs()
-    private var _binding:FragmentMovieDetailsBinding? = null
+    private var _binding: FragmentMovieDetailsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentMovieDetailsBinding.inflate(inflater,container,false)
+    ): View {
+        _binding = FragmentMovieDetailsBinding.inflate(inflater, container, false)
         val view = binding.root
         val navController = findNavController()
         val toolbar = binding.toolbar

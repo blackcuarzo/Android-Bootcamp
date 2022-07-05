@@ -1,7 +1,5 @@
 package com.danielcano.imdbapp.uilayer.uielements.menu
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -28,6 +26,8 @@ class MenuActivity : AppCompatActivity() {
         setContentView(view)
         val navController = findNavController(R.id.nav_host_fragment2)
         val bottomNavigationMenu = binding.bottomNavigationView
+
+        bottomNavigationMenu.menu.findItem(R.id.profileFragment).title = args.userName
         bottomNavigationMenu.setupWithNavController(navController)
     }
 }

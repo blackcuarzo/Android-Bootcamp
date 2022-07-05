@@ -11,13 +11,13 @@ import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICase
 import com.danielcano.imdbapp.domainlayer.usecases.GetMoviesForUICaseImpl
 import kotlinx.coroutines.launch
 
-class SearchViewModel: ViewModel() {
-    private val _movieList =  MutableLiveData<List<MovieModel>>()
-    private val movieList:LiveData<List<MovieModel>> = _movieList
-    private val _filteredMovieList =  MutableLiveData<List<MovieModel>>()
-    val filteredMovieList:LiveData<List<MovieModel>> = _filteredMovieList
+class SearchViewModel : ViewModel() {
+    private val _movieList = MutableLiveData<List<MovieModel>>()
+    private val movieList: LiveData<List<MovieModel>> = _movieList
+    private val _filteredMovieList = MutableLiveData<List<MovieModel>>()
+    val filteredMovieList: LiveData<List<MovieModel>> = _filteredMovieList
     private val _status = MutableLiveData<String>()
-    val status:LiveData<String> = _status
+    val status: LiveData<String> = _status
     private val listEndPointUseCase =
         GetMoviesForUICaseImpl(MoviesRepositoryImpl(ListOfMoviesNetworkDataSourceImpl()))
 
@@ -25,25 +25,25 @@ class SearchViewModel: ViewModel() {
         loadMovies(listEndPointUseCase)
     }
 
-    private fun loadMovies(useCase:GetMoviesForUICase){
+    private fun loadMovies(useCase: GetMoviesForUICase) {
         viewModelScope.launch {
-            try{
+            try {
                 _movieList.value = useCase.getMovies()
                 _status.value = "Successfully loaded ${movieList.value!!.size} items"
                 _filteredMovieList.value = _movieList.value
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 _movieList.value = listOf()
                 _status.value = "Failed to load, Error: ${e.localizedMessage}"
             }
         }
     }
 
-    fun filterMovies(query:String?){
+    fun filterMovies(query: String?) {
         val searchResult: List<MovieModel> =
-            if (query.isNullOrEmpty()){
+            if (query.isNullOrEmpty()) {
                 movieList.value!!
-            }else{
-               movieList.value!!.filter {movieModel ->
+            } else {
+                movieList.value!!.filter { movieModel ->
                     movieModel.name.contains(query)
                 }
             }

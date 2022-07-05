@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.danielcano.imdbapp.databinding.FragmentRegistrationBinding
 import com.danielcano.imdbapp.uilayer.viewmodels.UserRegistrationViewModel
-import kotlinx.coroutines.launch
 
 class RegistrationFragment : Fragment() {
     private val viewModel by viewModels<UserRegistrationViewModel>()
@@ -21,7 +19,7 @@ class RegistrationFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentRegistrationBinding.inflate(inflater, container, false)
         val view = binding.root

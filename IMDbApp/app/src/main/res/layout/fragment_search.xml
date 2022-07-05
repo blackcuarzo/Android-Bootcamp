@@ -7,20 +7,12 @@
     android:background="@color/white"
     tools:context=".uilayer.uielements.menu.SearchFragment">
 
-    <TextView
-        android:id="@+id/statusText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Default text"
-        android:textSize="@dimen/multiplier_12sp"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:queryHint="@string/search_hint"
-        app:layout_constraintTop_toBottomOf="@id/statusText">
+        app:layout_constraintTop_toTopOf="parent">
     </SearchView>
 
     <androidx.recyclerview.widget.RecyclerView
