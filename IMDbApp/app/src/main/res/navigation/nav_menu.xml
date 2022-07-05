@@ -11,15 +11,6 @@
         android:label="@null"
         tools:layout="@layout/fragment_search">
         <action
-            android:id="@+id/action_searchFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_searchFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_searchFragment_to_playFragment"
-            app:destination="@id/playFragment" />
-        <action
             android:id="@+id/action_searchFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment" />
     </fragment>
@@ -29,15 +20,6 @@
         android:label="@null"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_playFragment"
-            app:destination="@id/playFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment" />
     </fragment>
@@ -45,32 +27,12 @@
         android:id="@+id/playFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.PlayFragment"
         android:label="fragment_play"
-        tools:layout="@layout/fragment_play">
-        <action
-            android:id="@+id/action_playFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_playFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_playFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_play"/>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile">
-        <action
-            android:id="@+id/action_profileFragment_to_playFragment"
-            app:destination="@id/playFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_profile"/>
     <fragment
         android:id="@+id/movieDetailsFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.MovieDetailsFragment"
@@ -97,11 +59,5 @@
         <argument
             android:name="numberEpisodes"
             app:argType="integer" />
-        <action
-            android:id="@+id/action_movieDetailsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_movieDetailsFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
     </fragment>
 </navigation>
