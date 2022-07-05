@@ -16,14 +16,15 @@
             android:name=".uilayer.uielements.menu.MenuActivity"
             android:exported="false" />
         <activity
+            android:noHistory="true"
             android:name=".uilayer.uielements.access.UserAccessActivity"
             android:exported="false" />
         <activity
+            android:noHistory="true"
             android:name=".uilayer.uielements.access.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
