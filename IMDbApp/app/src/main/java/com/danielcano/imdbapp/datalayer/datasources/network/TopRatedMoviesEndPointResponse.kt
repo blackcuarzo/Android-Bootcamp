@@ -4,6 +4,6 @@ import com.squareup.moshi.Json
 
 data class TopRatedMoviesEndPointResponse(
     @Json(name = "results")
-    val results: List<MovieDtoNetwork>
+    val results: List<MovieNetworkDto>
 )
 

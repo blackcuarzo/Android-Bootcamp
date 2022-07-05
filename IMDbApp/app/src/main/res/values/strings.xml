@@ -75,4 +75,7 @@
     <string name="recommended_movie_series_title">Stranger Things</string>
     <string name="preview_content_details">Trailer Oficial</string>
     <string name="recycler_view_title">Las mejores selecciones</string>
+    <string name="preference_user_name">Nombre por defecto</string>
+    <string name="preferences">userPreferences</string>
+    <string name="default_username">Invitado</string>
 </resources>

@@ -1,18 +1,18 @@
 package com.danielcano.imdbapp.uilayer.uielements.menu
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danielcano.imdbapp.uilayer.adapters.MovieSearchListAdapter
 import com.danielcano.imdbapp.databinding.FragmentSearchBinding
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
+import com.danielcano.imdbapp.uilayer.adapters.MovieSearchListAdapter
 import com.danielcano.imdbapp.uilayer.viewmodels.SearchViewModel
 
 class SearchFragment : Fragment() {
@@ -23,7 +23,7 @@ class SearchFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val view = binding.root
         val movieList: RecyclerView = binding.movieList
@@ -34,15 +34,13 @@ class SearchFragment : Fragment() {
         viewModel.filteredMovieList.observe(viewLifecycleOwner) { movieItemsList ->
             movieListAdapter.submitList(movieItemsList)
         }
-        viewModel.status.observe(viewLifecycleOwner) {
-            binding.statusText.text = it
-        }
 
-        binding.searchView.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 viewModel.filterMovies(newText)
                 return false
             }
+
             override fun onQueryTextSubmit(query: String?): Boolean {
                 viewModel.filterMovies(query)
                 return true
