@@ -33,5 +33,10 @@
         android:id="@+id/menuActivity"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.MenuActivity"
         android:label="activity_menu"
-        tools:layout="@layout/activity_menu" />
+        tools:layout="@layout/activity_menu" >
+        <argument
+            android:name="user_name"
+            app:argType="string"
+            />
+    </activity>
 </navigation>
