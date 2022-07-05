@@ -36,7 +36,6 @@
     <fragment
         android:id="@+id/movieDetailsFragment"
         android:name="com.danielcano.imdbapp.uilayer.uielements.menu.MovieDetailsFragment"
-        android:label="fragment_movie_details"
         tools:layout="@layout/fragment_movie_details">
         <argument
             android:name="name"
