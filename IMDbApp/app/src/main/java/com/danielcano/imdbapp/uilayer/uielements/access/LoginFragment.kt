@@ -48,18 +48,15 @@ class LoginFragment : Fragment() {
             }
         }
 
-        val guestLink = binding.guestLink
-        guestLink.setOnClickListener {
+        binding.guestLink.setOnClickListener {
             navigator.navigateToRegistration(it)
         }
 
-        val registrationLink = binding.registrationLink
-        registrationLink.setOnClickListener {
+        binding.registrationLink.setOnClickListener {
             navigator.navigateToRegistration(it)
         }
 
-        val buttonLogin = binding.loginButton
-        buttonLogin.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             viewModel.loginUser(
                 binding.userName.text.toString(),
                 binding.userPass.text.toString()
