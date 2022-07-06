@@ -27,16 +27,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            >
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:layout_width="@dimen/multiplier_5dp"
                 android:layout_height="@dimen/multiplier_20dp"
                 android:layout_gravity="center"
-                android:background="@drawable/yellow_vertical_ellypse"
-                />
+                android:background="@drawable/yellow_vertical_ellypse" />
 
             <TextView
                 android:id="@+id/name_es"
@@ -188,6 +186,5 @@
 
         <View style="@style/Divider" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

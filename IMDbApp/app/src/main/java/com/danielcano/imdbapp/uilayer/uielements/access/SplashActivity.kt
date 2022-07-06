@@ -13,6 +13,6 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val accessIntent = Intent(this, UserAccessActivity::class.java)
-        Timer().schedule(timerTask { startActivity(accessIntent) }, 300)
+        Timer().schedule(timerTask { startActivity(accessIntent) }, 3000)
     }
 }
