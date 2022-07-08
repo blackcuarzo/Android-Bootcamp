@@ -7,9 +7,6 @@ import androidx.room.Query
 
 @Dao
 interface UserDao {
-    @Query("SELECT * FROM user")
-    suspend fun getAllUsers():List<User>
-
     @Query("SELECT * FROM user WHERE email LIKE :mail")
     suspend fun getUserByEmail(mail:String):User
 

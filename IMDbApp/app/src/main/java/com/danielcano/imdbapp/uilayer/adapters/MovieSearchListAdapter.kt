@@ -18,7 +18,6 @@ class MovieSearchListAdapter(private val clickHandler: (MovieModel) -> Unit) :
 
         override fun areContentsTheSame(oldItem: MovieModel, newItem: MovieModel): Boolean {
             return oldItem == newItem
-            // alternative would be return oldItem.id == oldItem.id, which might be more efficient for big objects
         }
     }
 

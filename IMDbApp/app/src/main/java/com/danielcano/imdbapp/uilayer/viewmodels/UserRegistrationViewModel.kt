@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danielcano.imdbapp.App
+import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.datalayer.databases.User
 import com.danielcano.imdbapp.datalayer.repositories.UserRepositoryImpl
 import com.danielcano.imdbapp.domainlayer.usecases.UserValidationUseCaseImpl
@@ -25,16 +26,16 @@ class UserRegistrationViewModel : ViewModel() {
 
     fun registerUser(name: String, email: String, pass: String) {
         when {
-            name.isEmpty() -> showErrorMessage("Por favor introducir el Nombre")
-            email.isEmpty() -> showErrorMessage("Por favor introducir Email")
-            pass.isEmpty() -> showErrorMessage("Por favor introducir contraseña")
-            pass.length < 8 -> showErrorMessage("La contraseña debe tener por lo menos 8 caracteres")
-            !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> showErrorMessage("Email no válido")
+            name.isEmpty() -> showErrorMessage(App.getContext().getString(R.string.empty_name_error))
+            email.isEmpty() -> showErrorMessage(App.getContext().getString(R.string.empty_mail_error))
+            pass.isEmpty() -> showErrorMessage(App.getContext().getString(R.string.empty_password_error))
+            pass.length < 8 -> showErrorMessage(App.getContext().getString(R.string.short_password_error))
+            !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> showErrorMessage(App.getContext().getString(R.string.not_valid_email_error))
             else -> {
                 viewModelScope.launch {
                     try {
                         if (userValidationUseCase.userExists(email)) {
-                            showErrorMessage("Un usuario con ese correo electrónico ya existe")
+                            showErrorMessage(App.getContext().getString(R.string.preexistent_user_error))
                         } else {
                             userValidationUseCase.registerUser(
                                 User(
@@ -50,11 +51,11 @@ class UserRegistrationViewModel : ViewModel() {
                             ) {
                                 _registrationStatus.value = true
                             } else {
-                                showErrorMessage("Hubo un problema al intentar registrar")
+                                showErrorMessage(App.getContext().getString(R.string.registering_problem_error))
                             }
                         }
                     } catch (e: Exception) {
-                        Log.e("error de userValidationUseCase", e.toString())
+                        Log.e(App.getContext().getString(R.string.user_validation_exception), e.toString())
                     }
                 }
             }

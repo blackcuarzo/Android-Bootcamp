@@ -7,7 +7,7 @@ import com.danielcano.imdbapp.databinding.ItemSearchMovieBinding
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
 class MovieSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val binding = ItemSearchMovieBinding.bind(itemView)
+    private val binding = ItemSearchMovieBinding.bind(itemView)
 
     fun bind(movie: MovieModel) {
         binding.movieNameText.text = movie.name

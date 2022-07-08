@@ -28,10 +28,3 @@ abstract class UserDatabase : RoomDatabase() {
         }
     }
 }
-
-object Database {
-    val instance by lazy {
-        val context = ApplicationProvider.getApplicationContext<Context>()
-        Room.inMemoryDatabaseBuilder(context, UserDatabase::class.java).build()
-    }
-}

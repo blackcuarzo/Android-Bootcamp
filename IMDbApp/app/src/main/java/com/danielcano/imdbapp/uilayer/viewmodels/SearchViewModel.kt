@@ -16,8 +16,6 @@ class SearchViewModel : ViewModel() {
     private val movieList: LiveData<List<MovieModel>> = _movieList
     private val _filteredMovieList = MutableLiveData<List<MovieModel>>()
     val filteredMovieList: LiveData<List<MovieModel>> = _filteredMovieList
-    private val _status = MutableLiveData<String>()
-    val status: LiveData<String> = _status
     private val listEndPointUseCase =
         GetMoviesForUICaseImpl(MoviesRepositoryImpl(ListOfMoviesNetworkDataSourceImpl()))
 
@@ -29,11 +27,9 @@ class SearchViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 _movieList.value = useCase.getMovies()
-                _status.value = "Successfully loaded ${movieList.value!!.size} items"
                 _filteredMovieList.value = _movieList.value
             } catch (e: Exception) {
                 _movieList.value = listOf()
-                _status.value = "Failed to load, Error: ${e.localizedMessage}"
             }
         }
     }
@@ -47,8 +43,6 @@ class SearchViewModel : ViewModel() {
                     movieModel.name.contains(query)
                 }
             }
-
         _filteredMovieList.value = searchResult
-        _status.value = "We have ${filteredMovieList.value?.size} items"
     }
 }

@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danielcano.imdbapp.App
+import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.datalayer.repositories.UserRepositoryImpl
 import com.danielcano.imdbapp.domainlayer.usecases.UserValidationUseCaseImpl
 import kotlinx.coroutines.launch
@@ -34,14 +35,14 @@ class UserLoginViewModel : ViewModel() {
                 } else {
                     val toast = Toast.makeText(
                         App.getContext(),
-                        "Usuario o credenciales no válidas",
+                        App.getContext().getString(R.string.not_valid_credentials),
                         Toast.LENGTH_SHORT
                     )
                     toast.show()
                 }
             }
         } catch (e: Exception) {
-            Log.e("error de userValidationUseCase", e.toString())
+            Log.e(App.getContext().getString(R.string.user_validation_exception), e.toString())
         }
     }
 }

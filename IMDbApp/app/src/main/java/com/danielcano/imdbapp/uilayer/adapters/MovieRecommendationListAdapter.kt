@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import com.danielcano.imdbapp.R
 import com.danielcano.imdbapp.domainlayer.models.MovieModel
 
-class MovieRecomendationListAdapter(private val clickHandler: (MovieModel) -> Unit) :
+class MovieRecommendationListAdapter(private val clickHandler: (MovieModel) -> Unit) :
     ListAdapter<MovieModel, MovieRecomendationViewHolder>(
         MovieDiffCallback
     ) {
@@ -18,7 +18,6 @@ class MovieRecomendationListAdapter(private val clickHandler: (MovieModel) -> Un
 
         override fun areContentsTheSame(oldItem: MovieModel, newItem: MovieModel): Boolean {
             return oldItem == newItem
-            // alternative would be return oldItem.id == oldItem.id, which might be more efficient for big objects
         }
     }
 

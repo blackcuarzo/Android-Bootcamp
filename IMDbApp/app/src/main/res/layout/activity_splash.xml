@@ -6,6 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".uilayer.uielements.access.SplashActivity"
+    android:background="@color/yellow_brand"
 
     >
 

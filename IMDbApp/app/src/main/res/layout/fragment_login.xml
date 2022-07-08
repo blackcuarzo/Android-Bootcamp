@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/yellow_brand"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".uilayer.uielements.access.LoginFragment">
@@ -39,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/multiplier_34dp"
             android:layout_marginBottom="@dimen/multiplier_7dp"
-            >
+            app:boxStrokeWidth="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/userName"
@@ -62,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/multiplier_34dp"
             android:layout_marginBottom="@dimen/multiplier_7dp"
-            >
+            app:boxStrokeWidth="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/userPass"

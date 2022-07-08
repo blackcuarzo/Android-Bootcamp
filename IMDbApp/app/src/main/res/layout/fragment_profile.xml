@@ -61,50 +61,147 @@
             android:layout_marginEnd="@dimen/multiplier_14dp"
             android:background="?android:attr/listDivider" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/multiplier_77dp"
-            android:layout_height="@dimen/multiplier_77dp"
-            android:layout_marginStart="@dimen/multiplier_14dp"
-            android:layout_marginTop="@dimen/multiplier_18dp"
-            android:layout_marginBottom="@dimen/multiplier_14dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/multiplier_6dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/multiplier_77dp"
+                android:layout_height="@dimen/multiplier_77dp"
+                android:layout_marginStart="@dimen/multiplier_14dp"
+                android:layout_marginTop="@dimen/multiplier_18dp"
+                android:layout_marginBottom="@dimen/multiplier_14dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/multiplier_45dp"
-                    android:background="@color/grey_light"
-                    android:padding="@dimen/multiplier_5dp">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/multiplier_6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/multiplier_45dp"
+                        android:background="@color/grey_light"
+                        android:padding="@dimen/multiplier_5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/card_internal_text"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/multiplier_5sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/card_internal_text"
+                        android:layout_marginTop="@dimen/multiplier_6dp"
+                        android:text="@string/card_ratings_text"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/multiplier_5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/card_numberof_ratings"
+                        android:textColor="@color/grey_default"
                         android:textSize="@dimen/multiplier_5sp" />
                 </LinearLayout>
 
-                <TextView
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/multiplier_77dp"
+                android:layout_height="@dimen/multiplier_77dp"
+                android:layout_marginStart="@dimen/multiplier_14dp"
+                android:layout_marginTop="@dimen/multiplier_18dp"
+                android:layout_marginBottom="@dimen/multiplier_14dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/multiplier_6dp"
-                    android:text="@string/card_ratings_text"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/multiplier_5sp" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/multiplier_6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/card_numberof_ratings"
-                    android:textColor="@color/grey_default"
-                    android:textSize="@dimen/multiplier_5sp" />
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/multiplier_45dp"
+                        android:background="@color/grey_light"
+                        android:padding="@dimen/multiplier_5dp">
 
-        </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/card_internal_text"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/multiplier_5sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/multiplier_6dp"
+                        android:text="@string/card_ratings_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/multiplier_5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/card_numberof_ratings"
+                        android:textColor="@color/grey_default"
+                        android:textSize="@dimen/multiplier_5sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/multiplier_77dp"
+                android:layout_height="@dimen/multiplier_77dp"
+                android:layout_marginStart="@dimen/multiplier_14dp"
+                android:layout_marginTop="@dimen/multiplier_18dp"
+                android:layout_marginBottom="@dimen/multiplier_14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/multiplier_6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/multiplier_45dp"
+                        android:background="@color/grey_light"
+                        android:padding="@dimen/multiplier_5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/card_internal_text"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/multiplier_5sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/multiplier_6dp"
+                        android:text="@string/card_ratings_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/multiplier_5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/card_numberof_ratings"
+                        android:textColor="@color/grey_default"
+                        android:textSize="@dimen/multiplier_5sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -119,13 +216,26 @@
         android:layout_marginEnd="@dimen/multiplier_24dp"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/follow_list_title"
-            android:textColor="@color/black"
-            android:textSize="@dimen/multiplier_12sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/multiplier_3dp"
+                android:layout_height="@dimen/multiplier_15dp"
+                android:layout_gravity="center"
+                android:background="@drawable/yellow_vertical_ellypse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/multiplier_8dp"
+                android:text="@string/follow_list_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/multiplier_12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -158,13 +268,27 @@
         android:layout_marginBottom="@dimen/multiplier_15dp"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/recent_views_title"
-            android:textColor="@color/black"
-            android:textSize="@dimen/multiplier_12sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/multiplier_3dp"
+                android:layout_height="@dimen/multiplier_15dp"
+                android:layout_gravity="center"
+                android:background="@drawable/yellow_vertical_ellypse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/multiplier_8dp"
+                android:text="@string/recent_views_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/multiplier_12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -186,13 +310,27 @@
         android:layout_marginBottom="@dimen/multiplier_15dp"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/favourite_persons_title"
-            android:textColor="@color/black"
-            android:textSize="@dimen/multiplier_12sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/multiplier_3dp"
+                android:layout_height="@dimen/multiplier_15dp"
+                android:layout_gravity="center"
+                android:background="@drawable/yellow_vertical_ellypse"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/multiplier_8dp"
+                android:text="@string/favourite_persons_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/multiplier_12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
